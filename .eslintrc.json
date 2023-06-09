@@ -8,10 +8,9 @@
     "plugin:jsx-a11y/recommended",
     "plugin:playwright/playwright-test",
     "plugin:vitest/recommended",
-    "plugin:vitest-globals/recommended",
     "prettier"
   ],
-  "env": {
-    "vitest-globals/env": true
+  "rules": {
+    "@typescript-eslint/no-namespace": "off"
   }
 }
