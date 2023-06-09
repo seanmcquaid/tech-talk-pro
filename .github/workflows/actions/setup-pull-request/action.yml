@@ -1,0 +1,17 @@
+name: Pull Request
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Setup Node
+      uses: actions/setup-node@v3
+      with:
+        node-version-file: '.nvmrc'
+        cache: 'yarn'
+    - name: Set env to dev
+      shell: bash
+      run: |
+        touch .env
+    - name: Install Dependencies
+      shell: bash
+      run: yarn install --immutable

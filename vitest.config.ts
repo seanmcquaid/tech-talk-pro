@@ -14,5 +14,8 @@ export default defineConfig({
       'src/**/*.test.js',
       'src/**/*.test.jsx',
     ],
+    coverage: {
+      reporter: ['lcov'],
+    },
   },
 });
