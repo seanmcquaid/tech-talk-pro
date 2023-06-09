@@ -1,3 +1,17 @@
 {
-  "extends": "next/core-web-vitals"
+  "plugins": ["vitest", "i18next", "jsx-a11y"],
+  "extends": [
+    "next/core-web-vitals",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:i18next/recommended",
+    "plugin:jsx-a11y/recommended",
+    "plugin:playwright/playwright-test",
+    "plugin:vitest/recommended",
+    "plugin:vitest-globals/recommended",
+    "prettier"
+  ],
+  "env": {
+    "vitest-globals/env": true
+  }
 }
