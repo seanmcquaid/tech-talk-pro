@@ -1,7 +1,8 @@
 import postsService from '@/services/postsService';
 import { UserButton } from '@clerk/nextjs';
+import { FC } from 'react';
 
-export default async function Home() {
+const Home: FC = async () => {
   const posts = await postsService.getPosts();
   return (
     <div>
@@ -13,4 +14,6 @@ export default async function Home() {
       </ul>
     </div>
   );
-}
+};
+
+export default Home;

@@ -1,8 +1,6 @@
-import { Inter } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/react';
 import { ClerkProvider } from '@clerk/nextjs';
-
-const inter = Inter({ subsets: ['latin'] });
+import StyledComponentsRegistry from '@/theme/StyledComponentsRegistry';
 
 export const metadata = {
   title: 'Create Next App',
@@ -18,7 +16,9 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <Analytics />
-        <body className={inter.className}>{children}</body>
+        <body>
+          <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+        </body>
       </html>
     </ClerkProvider>
   );
