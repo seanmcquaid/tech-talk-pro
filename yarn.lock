@@ -4457,6 +4457,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"ky@npm:^0.33.3":
+  version: 0.33.3
+  resolution: "ky@npm:0.33.3"
+  checksum: d1869e1f33c0165355f621b6726fcc1a9de20a31f4a826ca0cfd5753d83b9cba8723402d554a00194e0ee3959e0dda0638f4b99d54a3a7de928b55ff870b0bcc
+  languageName: node
+  linkType: hard
+
 "language-subtag-registry@npm:~0.3.2":
   version: 0.3.22
   resolution: "language-subtag-registry@npm:0.3.22"
@@ -6417,6 +6424,7 @@ __metadata:
     eslint-plugin-vitest: ^0.2.5
     husky: ^8.0.0
     jsdom: ^22.1.0
+    ky: ^0.33.3
     lint-staged: ^13.2.2
     next: 13.4.4
     prettier: ^2.8.8
