@@ -8,13 +8,15 @@
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write .",
-    "postinstall": "husky install",
+    "postinstall": "husky install && yarn prisma:generate",
     "test": "vitest run",
     "test:watch": "vitest",
     "coverage": "vitest run --coverage",
     "playwright:run": "playwright test",
     "playwright:debug": "playwright test --debug",
-    "playwright:codegen": "playwright codegen"
+    "playwright:codegen": "playwright codegen",
+    "prisma:generate": "prisma generate",
+    "prisma:migrate": "prisma migrate dev --name deploy"
   },
   "dependencies": {
     "@clerk/nextjs": "^4.20.0",
