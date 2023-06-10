@@ -1,6 +1,8 @@
 import { Analytics } from '@vercel/analytics/react';
 import { ClerkProvider } from '@clerk/nextjs';
 import StyledComponentsRegistry from '@/theme/StyledComponentsRegistry';
+import ReduxProvider from '@/store/ReduxProvider';
+import InitializeApp from '@/components/InitializeApp';
 
 export const metadata = {
   title: 'Create Next App',
@@ -17,7 +19,11 @@ export default function RootLayout({
       <html lang="en">
         <Analytics />
         <body>
-          <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+          <StyledComponentsRegistry>
+            <ReduxProvider>
+              <InitializeApp>{children}</InitializeApp>
+            </ReduxProvider>
+          </StyledComponentsRegistry>
         </body>
       </html>
     </ClerkProvider>
