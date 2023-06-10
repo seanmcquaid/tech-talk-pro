@@ -11,8 +11,6 @@ const InitializeApp: FC<PropsWithChildren> = ({ children }) => {
   const dispatch = useAppDispatch();
   const isInitialized = useSelector(selectIsInitialized);
 
-  console.log(isInitialized);
-
   useEffect(() => {
     if (!isInitialized) {
       dispatch(setInitialized());
