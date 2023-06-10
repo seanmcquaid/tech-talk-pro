@@ -1,12 +1,15 @@
+import Counter from '@/components/Counter';
 import postsService from '@/services/postsService';
 import { UserButton } from '@clerk/nextjs';
 import { FC } from 'react';
 
 const Home: FC = async () => {
   const posts = await postsService.getPosts();
+
   return (
     <div>
       <UserButton afterSignOutUrl="/" />
+      <Counter />
       <ul>
         {posts.map(post => (
           <li key={post.id}>{post.title}</li>
