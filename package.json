@@ -28,6 +28,7 @@
     "react-dom": "18.2.0",
     "react-hook-form": "^7.44.3",
     "react-redux": "^8.0.7",
+    "redux-persist": "^6.0.0",
     "styled-components": "^6.0.0-rc.3",
     "zod": "^3.21.4"
   },
