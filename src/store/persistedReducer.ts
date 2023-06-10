@@ -1,10 +1,12 @@
 import { combineReducers } from '@reduxjs/toolkit';
 import counterReducer from './counter/slice';
+import appReducer from './app/slice';
 import { persistReducer } from 'redux-persist';
 import createWebStorage from 'redux-persist/lib/storage/createWebStorage';
 
 const rootReducer = combineReducers({
   counter: counterReducer,
+  app: appReducer,
 });
 
 const createNoopStorage = () => {
@@ -27,6 +29,7 @@ const persistConfig = {
     typeof window !== 'undefined'
       ? createWebStorage('local')
       : createNoopStorage(),
+  blacklist: ['app'],
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
