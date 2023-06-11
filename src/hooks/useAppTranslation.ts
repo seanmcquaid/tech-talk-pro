@@ -1,5 +1,5 @@
 import enUSLocale from '@/i18n/locales/en-US';
-import { useTranslation } from 'react-i18next';
+import { UseTranslationOptions, useTranslation } from 'react-i18next';
 
 type DotPrefix<T extends string> = T extends '' ? '' : `.${T}`;
 
@@ -17,10 +17,14 @@ type DotNestedKeys<T> = (
 
 type LocaleKeys = DotNestedKeys<typeof enUSLocale>;
 
-const useAppTranslation = (key: LocaleKeys) => {
-  const { t } = useTranslation();
+const useAppTranslation = () => {
+  const { t, i18n } = useTranslation();
 
-  return t(key);
+  return {
+    t: (key: LocaleKeys, options?: UseTranslationOptions) =>
+      t(key, options ?? {}),
+    i18n,
+  };
 };
 
 export default useAppTranslation;
