@@ -3,6 +3,7 @@ import { ClerkProvider } from '@clerk/nextjs';
 import StyledComponentsRegistry from '@/theme/StyledComponentsRegistry';
 import ReduxProvider from '@/store/ReduxProvider';
 import InitializeApp from '@/components/InitializeApp';
+import '@/i18n';
 
 export const metadata = {
   title: 'Create Next App',
