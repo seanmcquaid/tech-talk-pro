@@ -1840,6 +1840,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@happykit/flags@npm:^3.2.0":
+  version: 3.2.0
+  resolution: "@happykit/flags@npm:3.2.0"
+  dependencies:
+    nanoid: 3.2.0
+  peerDependencies:
+    next: ">=12.0.2"
+    react: ">=16.13.1"
+  checksum: da73845bec08ccd60f26d82fd6cb3af5858003d4d9ec217a89a79ed37e1b9d70142403110450073fac30315a9904b9bb8ab87ab2cdc8a8e10063fc2ef4ad5f43
+  languageName: node
+  linkType: hard
+
 "@hookform/resolvers@npm:^3.1.0":
   version: 3.1.0
   resolution: "@hookform/resolvers@npm:3.1.0"
@@ -6497,6 +6509,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"nanoid@npm:3.2.0":
+  version: 3.2.0
+  resolution: "nanoid@npm:3.2.0"
+  bin:
+    nanoid: bin/nanoid.cjs
+  checksum: 3d1d5a69fea84e538057cf64106e713931c4ef32af344068ecff153ff91252f39b0f2b472e09b0dfff43ac3cf520c92938d90e6455121fe93976e23660f4fccc
+  languageName: node
+  linkType: hard
+
 "nanoid@npm:^3.3.4, nanoid@npm:^3.3.6":
   version: 3.3.6
   resolution: "nanoid@npm:3.3.6"
@@ -8195,6 +8216,7 @@ __metadata:
   resolution: "tech-talk-pro@workspace:."
   dependencies:
     "@clerk/nextjs": ^4.20.0
+    "@happykit/flags": ^3.2.0
     "@hookform/resolvers": ^3.1.0
     "@playwright/test": ^1.35.0
     "@prisma/client": ^4.15.0
