@@ -3,6 +3,8 @@ import { RootState } from '@/store';
 import { decrement, increment } from '@/store/counter/slice';
 import { FC } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { Button } from 'antd';
+import { styled } from 'styled-components';
 
 const Counter: FC = () => {
   const count = useSelector((state: RootState) => state.counter.value);
@@ -10,22 +12,18 @@ const Counter: FC = () => {
   return (
     <div>
       <div>
-        <button
-          aria-label="Increment value"
-          onClick={() => dispatch(increment())}
-        >
+        <StyledButton onClick={() => dispatch(increment())}>
           {'Increment'}
-        </button>
+        </StyledButton>
         <span>{count}</span>
-        <button
-          aria-label="Decrement value"
-          onClick={() => dispatch(decrement())}
-        >
-          {'Decrement'}
-        </button>
+        <Button onClick={() => dispatch(decrement())}>{'Decrement'}</Button>
       </div>
     </div>
   );
 };
+
+const StyledButton = styled(Button)`
+  color: red;
+`;
 
 export default Counter;

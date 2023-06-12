@@ -17,10 +17,6 @@ const InitializeApp: FC<PropsWithChildren> = ({ children }) => {
     }
   }, [dispatch, isInitialized]);
 
-  if (!isInitialized) {
-    return <div>{'Loading App'}</div>;
-  }
-
   return <>{children}</>;
 };
 

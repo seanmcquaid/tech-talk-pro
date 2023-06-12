@@ -4,6 +4,7 @@ import StyledComponentsRegistry from '@/theme/StyledComponentsRegistry';
 import ReduxProvider from '@/store/ReduxProvider';
 import InitializeApp from '@/components/InitializeApp';
 import '@/i18n/client';
+import 'antd/dist/reset.css';
 
 export const metadata = {
   title: 'Create Next App',
