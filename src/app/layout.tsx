@@ -1,12 +1,12 @@
 import { Analytics } from '@vercel/analytics/react';
 import { ClerkProvider } from '@clerk/nextjs';
-import StyledComponentsRegistry from '@/theme/StyledComponentsRegistry';
+import StyledComponentsRegistry from '@/styles/StyledComponentsRegistry';
 import ReduxProvider from '@/store/ReduxProvider';
 import InitializeApp from '@/components/InitializeApp';
 import '@/i18n/client';
 import 'antd/dist/reset.css';
 import { FC, PropsWithChildren } from 'react';
-import GlobalStyle from '@/theme/GlobalStyle';
+import GlobalStyle from '@/styles/GlobalStyle';
 
 export const metadata = {
   title: 'Tech Talk Pro',
