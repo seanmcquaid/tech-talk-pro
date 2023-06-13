@@ -7,6 +7,7 @@ import '@/i18n/client';
 import 'antd/dist/reset.css';
 import { FC, PropsWithChildren } from 'react';
 import GlobalStyle from '@/styles/GlobalStyle';
+import AppLayout from '@/components/AppLayout';
 
 export const metadata = {
   title: 'Tech Talk Pro',
@@ -22,7 +23,9 @@ const RootLayout: FC<PropsWithChildren> = ({ children }) => {
           <Analytics />
           <body>
             <ReduxProvider>
-              <InitializeApp>{children}</InitializeApp>
+              <InitializeApp>
+                <AppLayout>{children}</AppLayout>
+              </InitializeApp>
             </ReduxProvider>
           </body>
         </html>
