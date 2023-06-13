@@ -19,7 +19,7 @@
     "prisma:migrate": "prisma migrate dev --name deploy"
   },
   "dependencies": {
-    "@clerk/nextjs": "^4.20.0",
+    "@clerk/nextjs": "^4.21.1",
     "@happykit/flags": "^3.2.0",
     "@hookform/resolvers": "^3.1.1",
     "@prisma/client": "^4.15.0",
