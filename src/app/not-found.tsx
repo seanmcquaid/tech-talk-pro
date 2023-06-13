@@ -1,9 +1,9 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
-import { useEffect } from 'react';
+import { FC, useEffect } from 'react';
 
-const NotFound = () => {
+const NotFound: FC = () => {
   const router = useRouter();
 
   useEffect(() => {
