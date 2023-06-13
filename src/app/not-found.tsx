@@ -1,8 +1,16 @@
 'use client';
-import { FC } from 'react';
 
-const NotFound: FC = () => {
-  return <div>{'404 Page'}</div>;
+import { useRouter } from 'next/navigation';
+import { useEffect } from 'react';
+
+const NotFound = () => {
+  const router = useRouter();
+
+  useEffect(() => {
+    router.push('/404');
+  }, [router]);
+
+  return <></>;
 };
 
 export default NotFound;
