@@ -1,4 +1,5 @@
 'use client';
+import { UserButton, useSession } from '@clerk/nextjs';
 import { Layout, theme, Menu } from 'antd';
 import { FC, PropsWithChildren } from 'react';
 
@@ -8,6 +9,7 @@ const AppLayout: FC<PropsWithChildren> = ({ children }) => {
   const {
     token: { colorBgLayout },
   } = theme.useToken();
+  const { session } = useSession();
 
   return (
     <Layout
@@ -21,8 +23,14 @@ const AppLayout: FC<PropsWithChildren> = ({ children }) => {
         <Menu
           theme="dark"
           mode="inline"
-          defaultSelectedKeys={['4']}
-          items={[]}
+          items={[
+            {
+              icon: <UserButton afterSignOutUrl="/" />,
+              key: 'user',
+              disabled: !session,
+            },
+            { label: 'Dashboard', key: 'dashboard' },
+          ]}
         />
       </Sider>
       <Layout>

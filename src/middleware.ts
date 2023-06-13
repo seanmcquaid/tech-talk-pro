@@ -14,5 +14,7 @@ export default authMiddleware({
       signInUrl.searchParams.set('redirect_url', req.url);
       return NextResponse.redirect(signInUrl);
     }
+
+    return NextResponse.next();
   },
 });
