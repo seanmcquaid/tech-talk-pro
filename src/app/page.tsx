@@ -1,7 +1,6 @@
 import Counter from '@/components/Counter';
-import { FC } from 'react';
 
-const Home: FC = () => {
+const Home = () => {
   return <Counter />;
 };
 

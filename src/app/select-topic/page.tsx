@@ -1,6 +1,4 @@
-import { FC } from 'react';
-
-const SelectTopicPage: FC = () => {
+const SelectTopicPage = () => {
   return <div>{'Topic'}</div>;
 };
 

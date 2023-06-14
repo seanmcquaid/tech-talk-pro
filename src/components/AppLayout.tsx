@@ -1,6 +1,7 @@
 'use client';
 import { UserButton, useSession } from '@clerk/nextjs';
 import { Layout, theme, Menu } from 'antd';
+import { useRouter } from 'next/navigation';
 import { FC, PropsWithChildren } from 'react';
 
 const { Header, Footer, Sider, Content } = Layout;
@@ -10,6 +11,12 @@ const AppLayout: FC<PropsWithChildren> = ({ children }) => {
     token: { colorBgLayout },
   } = theme.useToken();
   const { session } = useSession();
+  const router = useRouter();
+
+  const handleClickItem = ({ key }: { key: string }) => {
+    if (key === '/user') return;
+    router.push(key);
+  };
 
   return (
     <Layout
@@ -26,11 +33,13 @@ const AppLayout: FC<PropsWithChildren> = ({ children }) => {
           items={[
             {
               icon: <UserButton afterSignOutUrl="/" />,
-              key: 'user',
+              key: '/user',
               disabled: !session,
             },
-            { label: 'Dashboard', key: 'dashboard' },
+            { label: 'Home', key: '/' },
+            { label: 'Dashboard', key: '/dashboard' },
           ]}
+          onClick={handleClickItem}
         />
       </Sider>
       <Layout>
