@@ -1,15 +1,5 @@
-'use client';
-import React from 'react';
-import { Space, Spin, Layout } from 'antd';
+import LoadingSpinner from '@/components/LoadingSpinner';
 
-const Loading: React.FC = () => (
-  <Layout>
-    <Layout.Content>
-      <Space size="middle">
-        <Spin size="large" />
-      </Space>
-    </Layout.Content>
-  </Layout>
-);
+const Loading = () => <LoadingSpinner />;
 
 export default Loading;
