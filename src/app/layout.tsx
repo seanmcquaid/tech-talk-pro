@@ -8,6 +8,8 @@ import 'antd/dist/reset.css';
 import { PropsWithChildren } from 'react';
 import GlobalStyle from '@/styles/GlobalStyle';
 import AppLayout from '@/components/AppLayout';
+import '@/env.client';
+import '@/env.server';
 
 export const metadata = {
   title: 'Tech Talk Pro',
