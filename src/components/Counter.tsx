@@ -1,12 +1,11 @@
 'use client';
 import { RootState } from '@/store';
 import { decrement, increment } from '@/store/counter/slice';
-import { FC } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Button } from 'antd';
 import { styled } from 'styled-components';
 
-const Counter: FC = () => {
+const Counter = () => {
   const count = useSelector((state: RootState) => state.counter.value);
   const dispatch = useDispatch();
   return (

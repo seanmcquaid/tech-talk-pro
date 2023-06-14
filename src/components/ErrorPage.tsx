@@ -1,7 +1,6 @@
 'use client';
 
 import { Button, Layout, Typography } from 'antd';
-import { FC } from 'react';
 import styled from 'styled-components';
 
 interface ErrorPageProps {
@@ -9,7 +8,7 @@ interface ErrorPageProps {
   title?: string;
 }
 
-const ErrorPage: FC<ErrorPageProps> = ({ reset, title }) => {
+const ErrorPage = ({ reset, title }: ErrorPageProps) => {
   return (
     <FullHeightLayout>
       <StyledContent>

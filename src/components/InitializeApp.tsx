@@ -2,12 +2,12 @@
 import { useAppDispatch } from '@/store';
 import { selectIsInitialized } from '@/store/app/selectors';
 import { setInitialized } from '@/store/app/slice';
-import { FC, PropsWithChildren, useEffect } from 'react';
+import { PropsWithChildren, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 
 // This might be a good place to to pass in props from a server component with data from the server to initialize our client with.
 
-const InitializeApp: FC<PropsWithChildren> = ({ children }) => {
+const InitializeApp = ({ children }: PropsWithChildren) => {
   const dispatch = useAppDispatch();
   const isInitialized = useSelector(selectIsInitialized);
 
@@ -17,7 +17,7 @@ const InitializeApp: FC<PropsWithChildren> = ({ children }) => {
     }
   }, [dispatch, isInitialized]);
 
-  return <>{children}</>;
+  return children;
 };
 
 export default InitializeApp;

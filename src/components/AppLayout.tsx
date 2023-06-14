@@ -2,11 +2,11 @@
 import { UserButton, useSession } from '@clerk/nextjs';
 import { Layout, theme, Menu } from 'antd';
 import { useRouter } from 'next/navigation';
-import { FC, PropsWithChildren } from 'react';
+import { PropsWithChildren } from 'react';
 
 const { Header, Footer, Sider, Content } = Layout;
 
-const AppLayout: FC<PropsWithChildren> = ({ children }) => {
+const AppLayout = ({ children }: PropsWithChildren) => {
   const {
     token: { colorBgLayout },
   } = theme.useToken();
