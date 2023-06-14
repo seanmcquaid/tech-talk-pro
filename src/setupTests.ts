@@ -8,4 +8,6 @@ declare module 'vitest' {
       TestingLibraryMatchers<T, void> {}
 }
 
+vi.mock('next/router', () => require('next-router-mock'));
+
 expect.extend(matchers);

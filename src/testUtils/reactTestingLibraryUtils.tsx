@@ -4,9 +4,11 @@ import { RootState } from '@/store';
 import { Provider } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit';
 import persistedReducer from '@/store/persistedReducer';
+import { MemoryRouterProvider } from 'next-router-mock/MemoryRouterProvider';
 
 interface RenderOptions {
   preloadedState?: Partial<RootState>;
+  initialRoute?: string;
 }
 
 const createWrapper = (options?: RenderOptions) => {
@@ -17,7 +19,11 @@ const createWrapper = (options?: RenderOptions) => {
   });
 
   const Wrapper = ({ children }: PropsWithChildren) => {
-    return <Provider store={store}>{children}</Provider>;
+    return (
+      <MemoryRouterProvider url={options?.initialRoute}>
+        <Provider store={store}>{children}</Provider>
+      </MemoryRouterProvider>
+    );
   };
 
   return Wrapper;
