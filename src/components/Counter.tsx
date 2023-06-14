@@ -22,7 +22,7 @@ const Counter = () => {
 };
 
 const StyledButton = styled(Button)`
-  color: red;
+  color: ${props => props.theme.getDesignTokens('colors', 'primary')};
 `;
 
 export default Counter;

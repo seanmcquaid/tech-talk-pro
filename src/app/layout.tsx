@@ -6,9 +6,9 @@ import InitializeApp from '@/components/InitializeApp';
 import '@/i18n/client';
 import 'antd/dist/reset.css';
 import { PropsWithChildren } from 'react';
-import GlobalStyle from '@/styles/GlobalStyle';
 import '@/env.client';
 import '@/env.server';
+import AppThemeProvider from '@/styles/AppThemeProvider';
 
 export const metadata = {
   title: 'Tech Talk Pro',
@@ -19,15 +19,16 @@ const RootLayout = ({ children }: PropsWithChildren) => {
   return (
     <ClerkProvider>
       <StyledComponentsRegistry>
-        <GlobalStyle />
-        <html lang="en-US">
-          <Analytics />
-          <body>
-            <ReduxProvider>
-              <InitializeApp>{children}</InitializeApp>
-            </ReduxProvider>
-          </body>
-        </html>
+        <AppThemeProvider>
+          <html lang="en-US">
+            <Analytics />
+            <body>
+              <ReduxProvider>
+                <InitializeApp>{children}</InitializeApp>
+              </ReduxProvider>
+            </body>
+          </html>
+        </AppThemeProvider>
       </StyledComponentsRegistry>
     </ClerkProvider>
   );
