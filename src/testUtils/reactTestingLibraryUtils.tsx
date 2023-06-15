@@ -5,6 +5,7 @@ import { Provider } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit';
 import persistedReducer from '@/store/persistedReducer';
 import { MemoryRouterProvider } from 'next-router-mock/MemoryRouterProvider';
+import AppThemeProvider from '@/styles/AppThemeProvider';
 
 interface RenderOptions {
   preloadedState?: Partial<RootState>;
@@ -21,7 +22,9 @@ const createWrapper = (options?: RenderOptions) => {
   const Wrapper = ({ children }: PropsWithChildren) => {
     return (
       <MemoryRouterProvider url={options?.initialRoute}>
-        <Provider store={store}>{children}</Provider>
+        <AppThemeProvider>
+          <Provider store={store}>{children}</Provider>
+        </AppThemeProvider>
       </MemoryRouterProvider>
     );
   };
