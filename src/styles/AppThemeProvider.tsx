@@ -1,8 +1,8 @@
 'use client';
-import { theme } from 'antd';
 import { PropsWithChildren } from 'react';
 import { ThemeProvider } from 'styled-components';
 import GlobalStyle from './GlobalStyle';
+import theme from './theme';
 
 const AppThemeProvider = ({ children }: PropsWithChildren) => (
   <ThemeProvider theme={theme}>
