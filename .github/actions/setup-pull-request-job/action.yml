@@ -7,11 +7,11 @@ runs:
       uses: actions/setup-node@v3
       with:
         node-version-file: '.nvmrc'
-        cache: 'yarn'
+        cache: 'pnpm'
     - name: Set env to dev
       shell: bash
       run: |
         touch .env
     - name: Install Dependencies
       shell: bash
-      run: yarn install --immutable
+      run: pnpm install --frozen-lockfile

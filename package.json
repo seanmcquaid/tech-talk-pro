@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write .",
-    "postinstall": "husky install && yarn prisma:generate",
+    "postinstall": "husky install && pnpm prisma:generate",
     "test": "vitest run --passWithNoTests",
     "test:watch": "vitest --passWithNoTests",
     "coverage": "vitest run --coverage --passWithNoTests",
@@ -73,5 +73,5 @@
   "engines": {
     "node": ">=18.16.0"
   },
-  "packageManager": "yarn@3.6.0"
+  "packageManager": "^pnpm@8.6.2"
 }
