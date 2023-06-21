@@ -1,50 +1,60 @@
 'use client';
+import PageWrapper from '@/components/PageWrapper';
+import useAppTranslation from '@/hooks/useAppTranslation';
 import { UserButton, useSession } from '@clerk/nextjs';
-import { Button, Layout } from 'antd';
+import { Button, Layout, Typography } from 'antd';
 import { useRouter } from 'next/navigation';
+import styled from 'styled-components';
 
-const { Header, Footer, Content } = Layout;
+const { Header, Footer } = Layout;
+const { Title, Paragraph } = Typography;
 
 const Home = () => {
+  const { t } = useAppTranslation();
   const { session } = useSession();
   const router = useRouter();
 
   return (
-    <Layout
-      style={{
-        height: '100%',
-        width: '100%',
-      }}
-    >
-      <Header
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'flex-end',
-        }}
-      >
+    <StyledLayout>
+      <StyledHeader>
         {session ? (
           <UserButton />
         ) : (
           <Button type="link" onClick={() => router.push('/sign-in')}>
-            Sign In
+            {t('Home.signIn')}
           </Button>
         )}
-      </Header>
-      <Layout>
-        <Content
-          style={{
-            padding: '16px',
-            height: '100%',
-            width: '100%',
-          }}
-        >
-          main content
-        </Content>
-      </Layout>
-      <Footer>SeanMcQuaidCode 2023</Footer>
-    </Layout>
+      </StyledHeader>
+      <PageWrapper isCentered>
+        <TitleWrapper>
+          <Title>{t('App.appName')}</Title>
+          <Paragraph>{t('Home.subtitle')}</Paragraph>
+        </TitleWrapper>
+      </PageWrapper>
+      <StyledFooter>
+        {t('App.companyName', { year: new Date().getFullYear() })}
+      </StyledFooter>
+    </StyledLayout>
   );
 };
+
+const StyledLayout = styled(Layout)`
+  height: 100%;
+  width: 100%;
+`;
+
+const StyledHeader = styled(Header)`
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+`;
+
+const StyledFooter = styled(Footer)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+const TitleWrapper = styled.section``;
 
 export default Home;
