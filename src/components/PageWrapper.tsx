@@ -10,7 +10,7 @@ interface PageWrapperProps extends PropsWithChildren {
 const PageWrapper = ({ children, isCentered = false }: PageWrapperProps) => {
   return (
     <StyledLayout>
-      <StyledContent isCentered={isCentered}>{children}</StyledContent>
+      <StyledContent $isCentered={isCentered}>{children}</StyledContent>
     </StyledLayout>
   );
 };
@@ -20,15 +20,15 @@ const StyledLayout = styled(Layout)`
   width: 100%;
 `;
 
-const StyledContent = styled(Layout.Content)<{ isCentered: boolean }>`
+const StyledContent = styled(Layout.Content)<{ $isCentered: boolean }>`
   padding: 16px;
   height: 100%;
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: ${({ isCentered }) => (isCentered ? 'center' : 'flex-start')};
-  justify-content: ${({ isCentered }) =>
-    isCentered ? 'center' : 'flex-start'};
+  align-items: ${({ $isCentered }) => ($isCentered ? 'center' : 'flex-start')};
+  justify-content: ${({ $isCentered }) =>
+    $isCentered ? 'center' : 'flex-start'};
 `;
 
 export default PageWrapper;
