@@ -8,10 +8,6 @@ export const config = {
 export default authMiddleware({
   publicRoutes: ['/', '/404', '/sign-in', '/sign-up'],
   afterAuth(auth, req) {
-    if (auth.isPublicRoute) {
-      return NextResponse.next();
-    }
-
     if (!auth.userId && !auth.isPublicRoute) {
       // handle users who aren't authenticated
       const signInUrl = new URL('/sign-in', req.url);
