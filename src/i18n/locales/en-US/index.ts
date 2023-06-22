@@ -5,6 +5,10 @@ const enUSLocale = {
     appName: 'Tech Talk Pro',
     companyName: '© {{year}} SeanMcQuaidCode',
   },
+  Dashboard: {
+    talksCardInfo: 'Check out your current talks or create a new one here!',
+    talksCardTitle: 'Talks',
+  },
   Home: {
     signIn: 'Sign In',
     subtitle:
