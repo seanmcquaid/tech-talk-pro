@@ -1,4 +1,5 @@
 'use client';
+import PageWrapper from '@/components/PageWrapper';
 import useAppTranslation from '@/hooks/useAppTranslation';
 import { Card, Typography } from 'antd';
 import { useRouter } from 'next/navigation';
@@ -9,7 +10,7 @@ const Dashboard = () => {
   const { t } = useAppTranslation();
 
   return (
-    <>
+    <PageWrapper>
       <StyledCard
         title={t('Dashboard.talksCardTitle')}
         size="default"
@@ -19,7 +20,7 @@ const Dashboard = () => {
           {t('Dashboard.talksCardInfo')}
         </Typography.Paragraph>
       </StyledCard>
-    </>
+    </PageWrapper>
   );
 };
 
