@@ -131,8 +131,8 @@ devDependencies:
     specifier: ^6.7.1
     version: 6.7.1(eslint@8.42.0)
   eslint-plugin-playwright:
-    specifier: ^0.12.0
-    version: 0.12.0(eslint@8.42.0)
+    specifier: ^0.15.2
+    version: 0.15.2(eslint@8.42.0)
   eslint-plugin-vitest:
     specifier: ^0.2.6
     version: 0.2.6(eslint@8.42.0)(typescript@5.1.3)
@@ -4124,11 +4124,11 @@ packages:
       semver: 6.3.0
     dev: true
 
-  /eslint-plugin-playwright@0.12.0(eslint@8.42.0):
-    resolution: {integrity: sha512-KXuzQjVzca5irMT/7rvzJKsVDGbQr43oQPc8i+SLEBqmfrTxlwMwRqfv9vtZqh4hpU0jmrnA/EOfwtls+5QC1w==}
+  /eslint-plugin-playwright@0.15.2(eslint@8.42.0):
+    resolution: {integrity: sha512-Q2jQ7ORjZscvwxR6MEgITZy23vxlnYlJlMR7aICFczWVMijTCZPGvvMoZaLWkAzx5J6fciulwbg+JJeRjMkTig==}
     peerDependencies:
       eslint: '>=7'
-      eslint-plugin-jest: '>=24'
+      eslint-plugin-jest: '>=25'
     peerDependenciesMeta:
       eslint-plugin-jest:
         optional: true
