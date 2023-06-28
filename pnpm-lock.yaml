@@ -125,8 +125,8 @@ devDependencies:
     specifier: ^8.8.0
     version: 8.8.0(eslint@8.42.0)
   eslint-plugin-i18next:
-    specifier: ^6.0.2
-    version: 6.0.2
+    specifier: ^6.0.3
+    version: 6.0.3
   eslint-plugin-jsx-a11y:
     specifier: ^6.7.1
     version: 6.7.1(eslint@8.42.0)
@@ -4120,8 +4120,8 @@ packages:
       - supports-color
     dev: true
 
-  /eslint-plugin-i18next@6.0.2:
-    resolution: {integrity: sha512-yotgCeHwuY+/rVSmcfxSGCxAxuPQ2c4nMVXQpJvz6liszpSzdMfRE6lSEfA2WQ4r/zL40wEpuF6c5/6Y/5+3sQ==}
+  /eslint-plugin-i18next@6.0.3:
+    resolution: {integrity: sha512-RtQXYfg6PZCjejIQ/YG+dUj/x15jPhufJ9hUDGH0kCpJ6CkVMAWOQ9exU1CrbPmzeykxLjrXkjAaOZF/V7+DOA==}
     engines: {node: '>=0.10.0'}
     dependencies:
       lodash: 4.17.21
