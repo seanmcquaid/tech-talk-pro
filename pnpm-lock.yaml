@@ -12,8 +12,8 @@ dependencies:
     specifier: ^4.21.1
     version: 4.21.1(next@13.4.7)(react-dom@18.2.0)(react@18.2.0)
   '@happykit/flags':
-    specifier: ^3.2.0
-    version: 3.2.0(next@13.4.7)(react@18.2.0)
+    specifier: ^3.3.0
+    version: 3.3.0(next@13.4.7)(react@18.2.0)
   '@hookform/resolvers':
     specifier: ^3.1.1
     version: 3.1.1(react-hook-form@7.44.3)
@@ -1932,8 +1932,8 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
-  /@happykit/flags@3.2.0(next@13.4.7)(react@18.2.0):
-    resolution: {integrity: sha512-mX7UBioTQWg9b5Fe/AGTow9+Cz44pbC5sj2evP69llg3pg0b0LHvQ7OIEXcINTB+UuXw4fIFweUDcDqiERIvhw==}
+  /@happykit/flags@3.3.0(next@13.4.7)(react@18.2.0):
+    resolution: {integrity: sha512-QyywkKYctdo0bnNf+bBd+3B/3Rsnjdaz+jtVA+jSqLxm0/lw51Z1+q2sEfc62MyNwQnY6w7eqajdwhuvH3VWAw==}
     peerDependencies:
       next: '>=12.0.2'
       react: '>=16.13.1'
