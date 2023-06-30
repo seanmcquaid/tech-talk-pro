@@ -23,3 +23,9 @@ export async function GET(request: NextRequest) {
 
   return NextResponse.json(slides);
 }
+
+export async function POST(request: NextRequest) {
+  const res = await request.json();
+
+  return NextResponse.json(res);
+}

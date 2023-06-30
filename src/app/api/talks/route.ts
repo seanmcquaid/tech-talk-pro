@@ -1,6 +1,6 @@
 import db from '@/utils/db';
 import { auth } from '@clerk/nextjs';
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 
 export async function GET() {
   const { userId } = auth();
@@ -10,4 +10,10 @@ export async function GET() {
     },
   });
   return NextResponse.json(talks);
+}
+
+export async function POST(request: NextRequest) {
+  const res = await request.json();
+
+  return NextResponse.json(res);
 }

@@ -1,6 +1,6 @@
 import { z } from 'zod';
 import createApiClient from './createApiClient';
-import Post, { postSchema } from '@/types/Post';
+import Post, { postSchema } from '@/types/responses/Post';
 
 const apiClient = createApiClient('https://jsonplaceholder.typicode.com');
 
