@@ -2,19 +2,16 @@ import type { TestingLibraryMatchers } from '@testing-library/jest-dom/matchers'
 import matchers from '@testing-library/jest-dom/matchers';
 import { expect } from 'vitest';
 import { PrismaClient } from '@prisma/client';
-import { mockDeep, mockReset, DeepMockProxy } from 'vitest-mock-extended';
+import { mockDeep, DeepMockProxy } from 'vitest-mock-extended';
 
 import db from '@/utils/db';
 
-vi.mock('./client', () => ({
-  __esModule: true,
-  default: mockDeep<PrismaClient>(),
-}));
+vi.mock('./client', () => mockDeep<PrismaClient>());
 
 export const dbMock = db as unknown as DeepMockProxy<PrismaClient>;
 
 beforeEach(() => {
-  mockReset(dbMock);
+  vi.resetAllMocks();
 });
 
 declare module 'vitest' {
