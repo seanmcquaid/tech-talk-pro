@@ -18,8 +18,8 @@ export async function POST(request: NextRequest) {
   const res = await request.json();
 
   try {
-    const body = createTalkBodySchema.parse(res);
-    const { title, talkLength, abstract, topic } = body;
+    const { title, talkLength, abstract, topic } =
+      createTalkBodySchema.parse(res);
     const talk = await db.talk.create({
       data: {
         title,
