@@ -33,12 +33,12 @@ export async function GET(
   return NextResponse.json(talk);
 }
 
-export function DELETE(request: NextRequest) {
+export async function DELETE(request: NextRequest) {
   const { searchParams } = new URL(request.url);
   const id = searchParams.get('id');
 
   try {
-    db.talk.delete({
+    await db.talk.delete({
       where: {
         id: id!,
       },
@@ -54,15 +54,38 @@ export function DELETE(request: NextRequest) {
   }
 }
 
-export async function PUT(request: NextRequest) {
-  const { searchParams } = new URL(request.url);
-  const id = searchParams.get('id');
+export async function PUT(
+  request: NextRequest,
+  { params }: { params: { id: string } },
+) {
+  const { userId } = auth();
+  const { id } = params;
   const res = await request.json();
 
   try {
+    const originalTalk = await db.talk.findUnique({
+      where: {
+        id: id!,
+      },
+    });
+
+    if (!originalTalk) {
+      return NextResponse.next({
+        status: 404,
+        statusText: 'Talk not found',
+      });
+    }
+
+    if (originalTalk.userId !== userId) {
+      return NextResponse.next({
+        status: 403,
+        statusText: 'You are not authorized to view this talk',
+      });
+    }
+
     const { title, talkLength, topic, abstract } =
       createTalkBodySchema.parse(res);
-    const talk = await db.talk.update({
+    const updatedTalk = await db.talk.update({
       where: {
         id: id!,
       },
@@ -73,7 +96,7 @@ export async function PUT(request: NextRequest) {
         abstract,
       },
     });
-    return NextResponse.json(talk);
+    return NextResponse.json(updatedTalk);
   } catch (err) {
     return NextResponse.next({
       status: 400,
