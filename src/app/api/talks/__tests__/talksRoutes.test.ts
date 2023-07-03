@@ -22,7 +22,6 @@ describe('/talks', () => {
           topic: 'Test',
         }),
       } as NextRequest);
-
       expect(result.status).toBe(200);
     });
     it('Throws an error if an invalid request body is provided', async () => {

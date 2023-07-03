@@ -6,13 +6,11 @@ import { mockDeep, DeepMockProxy } from 'vitest-mock-extended';
 
 import db from '@/utils/db';
 
-vi.mock('./client', () => mockDeep<PrismaClient>());
+vi.mock('@/utils/db', () => mockDeep<PrismaClient>());
 
-export const dbMock = db as unknown as DeepMockProxy<PrismaClient>;
+vi.mock('next/router', () => require('next-router-mock'));
 
-beforeEach(() => {
-  vi.resetAllMocks();
-});
+export const mockDb = db as unknown as DeepMockProxy<PrismaClient>;
 
 declare module 'vitest' {
   interface Assertion<T>
@@ -20,6 +18,8 @@ declare module 'vitest' {
       TestingLibraryMatchers<T, void> {}
 }
 
-vi.mock('next/router', () => require('next-router-mock'));
-
 expect.extend(matchers);
+
+beforeEach(() => {
+  vi.resetAllMocks();
+});

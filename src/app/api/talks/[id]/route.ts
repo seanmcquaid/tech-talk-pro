@@ -3,21 +3,16 @@ import db from '@/utils/db';
 import { auth } from '@clerk/nextjs';
 import { NextRequest, NextResponse } from 'next/server';
 
-export async function GET(request: NextRequest) {
+export async function GET(
+  request: NextRequest,
+  { params }: { params: { id: string } },
+) {
   const { userId } = auth();
-  const { searchParams } = new URL(request.url);
-  const id = searchParams.get('id');
-
-  if (!id) {
-    return NextResponse.next({
-      status: 400,
-      statusText: 'No ID was provided',
-    });
-  }
+  const { id } = params;
 
   const talk = await db.talk.findUnique({
     where: {
-      id,
+      id: id!,
     },
   });
 
