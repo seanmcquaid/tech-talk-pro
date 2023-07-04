@@ -43,7 +43,7 @@ describe('/talks', () => {
           topic: 'Test',
         }),
       } as NextRequest);
-      expect(result.status).toBe(400);
+      expect(result.status).toBe(500);
     });
   });
 });

@@ -72,10 +72,10 @@ describe('/talks/[id]', () => {
       const result = await DELETE({} as NextRequest, { params: { id: '1' } });
       expect(result.status).toBe(204);
     });
-    it('Returns a 400 when the deletion fails', async () => {
+    it('Returns a 500 when the deletion fails', async () => {
       mockDb.talk.delete.mockRejectedValueOnce(null);
       const result = await DELETE({} as NextRequest, { params: { id: '1' } });
-      expect(result.status).toBe(400);
+      expect(result.status).toBe(500);
     });
   });
   describe('PUT', () => {
