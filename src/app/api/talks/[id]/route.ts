@@ -33,9 +33,11 @@ export async function GET(
   return NextResponse.json(talk);
 }
 
-export async function DELETE(request: NextRequest) {
-  const { searchParams } = new URL(request.url);
-  const id = searchParams.get('id');
+export async function DELETE(
+  request: NextRequest,
+  { params }: { params: { id: string } },
+) {
+  const { id } = params;
 
   try {
     await db.talk.delete({

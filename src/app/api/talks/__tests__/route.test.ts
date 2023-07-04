@@ -3,6 +3,8 @@ import { POST } from '../route';
 import { auth } from '@clerk/nextjs';
 import { MockedFunction } from 'vitest';
 import { SignedInAuthObject } from '@clerk/nextjs/dist/types/server';
+import { mockDb } from '@/setupTests';
+import { Talk } from '@prisma/client';
 
 vi.mock('@clerk/nextjs');
 
@@ -14,6 +16,14 @@ describe('/talks', () => {
       mockAuth.mockReturnValue({ userId: 'test' } as SignedInAuthObject);
     });
     it('Successfully responds if a valid request body is provided', async () => {
+      mockDb.talk.create.mockResolvedValueOnce({
+        id: '123',
+        title: 'Test talk',
+        userId: '456',
+        talkLength: 30,
+        topic: 'Test topic',
+        abstract: 'Test abstract',
+      } as Talk);
       const result = await POST({
         json: async () => ({
           title: 'Test',
