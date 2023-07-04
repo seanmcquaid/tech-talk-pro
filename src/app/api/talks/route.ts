@@ -4,20 +4,26 @@ import { auth } from '@clerk/nextjs';
 import { NextRequest, NextResponse } from 'next/server';
 
 export async function GET() {
-  const { userId } = auth();
-  const talks = await db.talk.findMany({
-    where: {
-      userId: userId!,
-    },
-  });
-  return NextResponse.json(talks);
+  try {
+    const { userId } = auth();
+    const talks = await db.talk.findMany({
+      where: {
+        userId: userId!,
+      },
+    });
+    return NextResponse.json(talks);
+  } catch (err) {
+    return NextResponse.next({
+      status: 500,
+      statusText: "The talks couldn't be retrieved",
+    });
+  }
 }
 
 export async function POST(request: NextRequest) {
-  const { userId } = auth();
-  const res = await request.json();
-
   try {
+    const { userId } = auth();
+    const res = await request.json();
     const { title, talkLength, abstract, topic } =
       createTalkBodySchema.parse(res);
     const talk = await db.talk.create({
@@ -32,7 +38,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json(talk);
   } catch (err) {
     return NextResponse.next({
-      status: 400,
+      status: 500,
       statusText: "The talk couldn't be created",
     });
   }

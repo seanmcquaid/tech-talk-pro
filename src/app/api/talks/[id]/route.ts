@@ -7,42 +7,48 @@ export async function GET(
   request: NextRequest,
   { params }: { params: { id: string } },
 ) {
-  const { userId } = auth();
-  const { id } = params;
+  try {
+    const { userId } = auth();
+    const { id } = params;
 
-  const talk = await db.talk.findUnique({
-    where: {
-      id: id!,
-    },
-  });
+    const talk = await db.talk.findUnique({
+      where: {
+        id: id!,
+      },
+    });
 
-  if (!talk) {
+    if (!talk) {
+      return NextResponse.next({
+        status: 404,
+        statusText: 'Talk not found',
+      });
+    }
+
+    if (talk.userId !== userId) {
+      return NextResponse.next({
+        status: 403,
+        statusText: 'You are not authorized to view this talk',
+      });
+    }
+
+    return NextResponse.json(talk);
+  } catch (err) {
     return NextResponse.next({
-      status: 404,
-      statusText: 'Talk not found',
+      status: 500,
+      statusText: "The talk couldn't be retrieved",
     });
   }
-
-  if (talk.userId !== userId) {
-    return NextResponse.next({
-      status: 403,
-      statusText: 'You are not authorized to view this talk',
-    });
-  }
-
-  return NextResponse.json(talk);
 }
 
 export async function DELETE(
   request: NextRequest,
   { params }: { params: { id: string } },
 ) {
-  const { id } = params;
-
   try {
+    const { id } = params;
     await db.talk.delete({
       where: {
-        id: id!,
+        id,
       },
     });
     return NextResponse.next({
@@ -50,7 +56,7 @@ export async function DELETE(
     });
   } catch (err) {
     return NextResponse.next({
-      status: 400,
+      status: 500,
       statusText: "The talk couldn't be deleted",
     });
   }
@@ -60,14 +66,13 @@ export async function PUT(
   request: NextRequest,
   { params }: { params: { id: string } },
 ) {
-  const { userId } = auth();
-  const { id } = params;
-  const res = await request.json();
-
   try {
+    const { userId } = auth();
+    const { id } = params;
+    const res = await request.json();
     const originalTalk = await db.talk.findUnique({
       where: {
-        id: id!,
+        id,
       },
     });
 
@@ -101,7 +106,7 @@ export async function PUT(
     return NextResponse.json(updatedTalk);
   } catch (err) {
     return NextResponse.next({
-      status: 400,
+      status: 500,
       statusText: "The talk couldn't be updated",
     });
   }

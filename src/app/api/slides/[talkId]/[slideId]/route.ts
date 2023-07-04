@@ -2,14 +2,15 @@ import { createSlideBodySchema } from '@/types/requests/CreateSlideBody';
 import db from '@/utils/db';
 import { NextRequest, NextResponse } from 'next/server';
 
-export async function DELETE(request: NextRequest) {
-  const { searchParams } = new URL(request.url);
-  const slideId = searchParams.get('slideId');
-
+export async function DELETE(
+  request: NextRequest,
+  { params }: { params: { slideId: string } },
+) {
   try {
+    const { slideId } = params;
     await db.slide.delete({
       where: {
-        id: slideId!,
+        id: slideId,
       },
     });
     return NextResponse.next({
@@ -17,23 +18,24 @@ export async function DELETE(request: NextRequest) {
     });
   } catch (err) {
     return NextResponse.next({
-      status: 400,
+      status: 500,
       statusText: "The slide couldn't be deleted",
     });
   }
 }
 
-export async function PUT(request: NextRequest) {
-  const { searchParams } = new URL(request.url);
-  const slideId = searchParams.get('slideId');
-  const res = await request.json();
-
+export async function PUT(
+  request: NextRequest,
+  { params }: { params: { slideId: string } },
+) {
   try {
+    const { slideId } = params;
+    const res = await request.json();
     const body = createSlideBodySchema.parse(res);
     const { title, sortOrder, bulletPoints, notes } = body;
     const slide = await db.slide.update({
       where: {
-        id: slideId!,
+        id: slideId,
       },
       data: {
         title,
@@ -45,7 +47,7 @@ export async function PUT(request: NextRequest) {
     return NextResponse.json(slide);
   } catch (err) {
     return NextResponse.next({
-      status: 400,
+      status: 500,
       statusText: "The slide couldn't be updated",
     });
   }
