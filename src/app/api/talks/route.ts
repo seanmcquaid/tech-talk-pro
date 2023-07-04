@@ -23,9 +23,9 @@ export async function GET() {
 export async function POST(request: NextRequest) {
   try {
     const { userId } = auth();
-    const res = await request.json();
+    const body = await request.json();
     const { title, talkLength, abstract, topic } =
-      createTalkBodySchema.parse(res);
+      createTalkBodySchema.parse(body);
     const talk = await db.talk.create({
       data: {
         title,

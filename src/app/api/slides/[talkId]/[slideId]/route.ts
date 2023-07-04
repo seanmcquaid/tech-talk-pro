@@ -8,11 +8,13 @@ export async function DELETE(
 ) {
   try {
     const { slideId } = params;
+
     await db.slide.delete({
       where: {
         id: slideId,
       },
     });
+
     return NextResponse.next({
       status: 204,
     });
@@ -30,9 +32,10 @@ export async function PUT(
 ) {
   try {
     const { slideId } = params;
-    const res = await request.json();
-    const body = createSlideBodySchema.parse(res);
-    const { title, sortOrder, bulletPoints, notes } = body;
+    const body = await request.json();
+    const { title, sortOrder, bulletPoints, notes } =
+      createSlideBodySchema.parse(body);
+
     const slide = await db.slide.update({
       where: {
         id: slideId,
@@ -44,6 +47,7 @@ export async function PUT(
         notes,
       },
     });
+
     return NextResponse.json(slide);
   } catch (err) {
     return NextResponse.next({

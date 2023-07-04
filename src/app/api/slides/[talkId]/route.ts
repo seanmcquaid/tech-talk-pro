@@ -34,9 +34,9 @@ export async function POST(
   try {
     const { userId } = auth();
     const { talkId } = params;
-    const res = await request.json();
-    const body = createSlideBodySchema.parse(res);
-    const { title, sortOrder, bulletPoints, notes } = body;
+    const body = await request.json();
+    const { title, sortOrder, bulletPoints, notes } =
+      createSlideBodySchema.parse(body);
     const slide = await db.slide.create({
       data: {
         title,

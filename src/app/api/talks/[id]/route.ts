@@ -69,7 +69,7 @@ export async function PUT(
   try {
     const { userId } = auth();
     const { id } = params;
-    const res = await request.json();
+    const body = await request.json();
     const originalTalk = await db.talk.findUnique({
       where: {
         id,
@@ -91,10 +91,10 @@ export async function PUT(
     }
 
     const { title, talkLength, topic, abstract } =
-      createTalkBodySchema.parse(res);
+      createTalkBodySchema.parse(body);
     const updatedTalk = await db.talk.update({
       where: {
-        id: id!,
+        id,
       },
       data: {
         title,
