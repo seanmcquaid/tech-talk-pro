@@ -10,9 +10,23 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Todo {
-  id        Int      @id @default(autoincrement())
+model Slide {
+  id        String      @id @default(uuid())
   title     String
-  completed Boolean  @default(false)
   createdAt DateTime @default(now())
+  talkId    String
+  sortOrder Int
+  bulletPoints String[]
+  notes String[]
+  userId    String
+}
+
+model Talk {
+  id        String      @id @default(uuid())
+  title     String
+  talkLength Int
+  createdAt DateTime @default(now())
+  abstract  String
+  topic    String
+  userId    String
 }
