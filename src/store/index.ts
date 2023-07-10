@@ -10,6 +10,7 @@ import {
   REGISTER,
 } from 'redux-persist';
 import persistedReducer from './persistedReducer';
+import talksApi from './talksApi';
 
 const store = configureStore({
   reducer: persistedReducer,
@@ -18,7 +19,7 @@ const store = configureStore({
       serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
-    }),
+    }).concat(talksApi.middleware),
   devTools: true,
 });
 

@@ -1,31 +1,22 @@
 'use client';
+import NavigationCard from '@/components/NavigationCard';
 import PageWrapper from '@/components/PageWrapper';
 import useAppTranslation from '@/hooks/useAppTranslation';
-import { Card, Typography } from 'antd';
-import { useRouter } from 'next/navigation';
-import styled from 'styled-components';
+import { Typography } from 'antd';
 
 const Dashboard = () => {
-  const router = useRouter();
   const { t } = useAppTranslation();
 
   return (
     <PageWrapper>
-      <StyledCard
+      <Typography.Title>{t('Dashboard.title')}</Typography.Title>
+      <NavigationCard
         title={t('Dashboard.talksCardTitle')}
-        size="default"
-        onClick={() => router.push('/dashboard/talks')}
-      >
-        <Typography.Paragraph>
-          {t('Dashboard.talksCardInfo')}
-        </Typography.Paragraph>
-      </StyledCard>
+        route="/dashboard/talks"
+        text={t('Dashboard.talksCardInfo')}
+      />
     </PageWrapper>
   );
 };
-
-const StyledCard = styled(Card)`
-  cursor: pointer;
-`;
 
 export default Dashboard;
