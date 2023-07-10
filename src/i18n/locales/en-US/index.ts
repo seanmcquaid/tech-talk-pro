@@ -14,6 +14,11 @@ const enUSLocale = {
     subtitle:
       'The easiest way for you to prepare to apply to your first tech conference!',
   },
+  Talks: {
+    createNewTalk: 'Create New Talk',
+    createNewTalkInfo:
+      'Go through our flow and create a new talk to submit to conferences!',
+  },
 } as const;
 
 export default enUSLocale;

@@ -1,10 +1,10 @@
 import { Talk } from '@prisma/client';
 import createApiClient from './createApiClient';
 
-const apiClient = createApiClient('/api/talks');
+const apiClient = createApiClient('/api');
 
 const talksService = {
-  getTalks: () => apiClient.get('').json<Talk[]>(),
+  getTalks: () => apiClient.get('talks').json<Talk[]>(),
 } as const;
 
 export default talksService;
