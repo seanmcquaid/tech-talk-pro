@@ -101,8 +101,8 @@ devDependencies:
     specifier: ^5.1.26
     version: 5.1.26
   '@types/testing-library__jest-dom':
-    specifier: ^5.14.6
-    version: 5.14.6
+    specifier: ^5.14.7
+    version: 5.14.7
   '@typescript-eslint/eslint-plugin':
     specifier: ^5.61.0
     version: 5.61.0(@typescript-eslint/parser@5.60.1)(eslint@8.44.0)(typescript@5.1.6)
@@ -2559,7 +2559,7 @@ packages:
     dependencies:
       '@adobe/css-tools': 4.2.0
       '@babel/runtime': 7.22.5
-      '@types/testing-library__jest-dom': 5.14.6
+      '@types/testing-library__jest-dom': 5.14.7
       aria-query: 5.2.1
       chalk: 3.0.0
       css.escape: 1.5.1
@@ -2777,8 +2777,8 @@ packages:
     resolution: {integrity: sha512-n4sx2bqL0mW1tvDf/loQ+aMX7GQD3lc3fkCMC55VFNDu/vBOabO+LTIeXKM14xK0ppk5TUGcWRjiSpIlUpghKw==}
     dev: false
 
-  /@types/testing-library__jest-dom@5.14.6:
-    resolution: {integrity: sha512-FkHXCb+ikSoUP4Y4rOslzTdX5sqYwMxfefKh1GmZ8ce1GOkEHntSp6b5cGadmNfp5e4BMEWOMx+WSKd5/MqlDA==}
+  /@types/testing-library__jest-dom@5.14.7:
+    resolution: {integrity: sha512-PFDoAbR9y8pD9+41oM1Yy0nVCkaRPlklmDZoPCXhNpR0ZO13HAYWqdNEjLtvIiveBmfB/+jdvmuOVeOXehKOaA==}
     dependencies:
       '@types/jest': 29.5.2
     dev: true
