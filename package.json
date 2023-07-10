@@ -3,20 +3,20 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
+    "coverage": "vitest run --coverage --passWithNoTests",
+    "dev": "next dev",
     "format": "prettier --write .",
     "postinstall": "husky install && pnpm prisma:generate",
-    "test": "vitest run --passWithNoTests",
-    "test:watch": "vitest --passWithNoTests",
-    "coverage": "vitest run --coverage --passWithNoTests",
-    "playwright:run": "playwright test",
-    "playwright:debug": "playwright test --debug",
+    "lint": "next lint",
     "playwright:codegen": "playwright codegen",
+    "playwright:debug": "playwright test --debug",
+    "playwright:run": "playwright test",
     "prisma:generate": "prisma generate",
-    "prisma:migrate": "prisma migrate dev --name deploy"
+    "prisma:migrate": "prisma migrate dev --name deploy",
+    "start": "next start",
+    "test": "vitest run --passWithNoTests",
+    "test:watch": "vitest --passWithNoTests"
   },
   "dependencies": {
     "@ant-design/icons": "^5.1.4",
@@ -72,5 +72,8 @@
     "typescript": "5.1.6",
     "vitest": "^0.32.4",
     "vitest-mock-extended": "^1.1.3"
+  },
+  "engines": {
+    "node": ">=18.16.0"
   }
 }
