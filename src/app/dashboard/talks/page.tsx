@@ -3,6 +3,7 @@ import NavigationCard from '@/components/NavigationCard';
 import PageWrapper from '@/components/PageWrapper';
 import useAppTranslation from '@/hooks/useAppTranslation';
 import { useGetTalksQuery } from '@/store/talksApi';
+import { Typography } from 'antd';
 
 const TalksPage = () => {
   const { t } = useAppTranslation();
@@ -10,6 +11,7 @@ const TalksPage = () => {
 
   return (
     <PageWrapper>
+      <Typography.Title>{t('Talks.title')}</Typography.Title>
       <NavigationCard
         title={t('Talks.createNewTalk')}
         route="/dashboard/talks/create"

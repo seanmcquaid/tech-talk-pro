@@ -8,6 +8,7 @@ const enUSLocale = {
   Dashboard: {
     talksCardInfo: 'Check out your current talks or create a new one here!',
     talksCardTitle: 'Talks',
+    title: 'Dashboard',
   },
   Home: {
     signIn: 'Sign In',
@@ -18,6 +19,7 @@ const enUSLocale = {
     createNewTalk: 'Create New Talk',
     createNewTalkInfo:
       'Go through our flow and create a new talk to submit to conferences!',
+    title: 'Talks',
   },
 } as const;
 
