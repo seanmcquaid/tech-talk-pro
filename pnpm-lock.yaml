@@ -69,8 +69,8 @@ dependencies:
     specifier: ^4.1.8
     version: 4.1.8
   styled-components:
-    specifier: ^6.0.2
-    version: 6.0.2(react-dom@18.2.0)(react@18.2.0)
+    specifier: ^6.0.3
+    version: 6.0.3(react-dom@18.2.0)(react@18.2.0)
   zod:
     specifier: ^3.21.4
     version: 3.21.4
@@ -7053,8 +7053,8 @@ packages:
       acorn: 8.9.0
     dev: true
 
-  /styled-components@6.0.2(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-CRWTuYme0W4zVqzXpODByyocgVbBpRoXmaEgPGb67dvweV1igp7Ik4Z5C9e83wZ2l2hPg/XKV7cjuNxhRlC7Mg==}
+  /styled-components@6.0.3(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-qEyWvDK4CYCyDckNIruRJIcQSvcUR3dVEw/fwxu1v0LFzUMPr2uf5PhXHp17FkGK+S4TkglOS+XIealo1MssQA==}
     engines: {node: '>= 16'}
     peerDependencies:
       babel-plugin-styled-components: '>= 2'
