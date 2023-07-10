@@ -43,3 +43,11 @@ jobs:
         run: pnpm playwright install --with-deps
       - name: Run Playwright tests
         run: pnpm playwright:run
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout latest
+        uses: actions/checkout@v3
+      - uses: ./.github/actions/setup-pull-request-job
+      - name: Build
+        run: pnpm build
