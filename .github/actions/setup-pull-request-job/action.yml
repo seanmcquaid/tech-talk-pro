@@ -16,6 +16,14 @@ runs:
       shell: bash
       run: |
         touch .env
+        echo "NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=fake-key" >> .env
+        echo "CLERK_SECRET_KEY=fake-key" >> .env
+        echo "NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in" >> .env
+        echo "NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up" >> .env
+        echo "NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=/" >> .env
+        echo "NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=/" >> .env
+        echo "DATABASE_URL=fake-url" >> .env
+        echo "NEXT_PUBLIC_FLAGS_ENV_KEY=fake-key" >> .env
     - name: Install Dependencies
       shell: bash
       run: pnpm install --frozen-lockfile
