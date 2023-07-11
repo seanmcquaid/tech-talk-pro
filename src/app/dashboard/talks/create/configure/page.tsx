@@ -27,14 +27,20 @@ const topicOptions = [
 
 const TopicEnum = z.enum(topicOptions);
 
+const talkLengthOptions = [
+  5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60,
+] as const;
+
 const formSchema = z.object({
   topic: TopicEnum,
+  talkLength: z.coerce.number(),
 });
 
-const SelectTopicPage = () => {
+const ConfigurePage = () => {
   const { control, handleSubmit } = useForm<z.infer<typeof formSchema>>({
     defaultValues: {
       topic: 'Software Engineering',
+      talkLength: 30,
     },
   });
 
@@ -66,4 +72,4 @@ const SelectTopicPage = () => {
   );
 };
 
-export default SelectTopicPage;
+export default ConfigurePage;
