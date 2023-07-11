@@ -1,5 +1,6 @@
+'use client';
 import PageWrapper from '@/components/PageWrapper';
-import { Select, Typography } from 'antd';
+import { Button, Select, Typography } from 'antd';
 import { z } from 'zod';
 import { Controller, useForm } from 'react-hook-form';
 
@@ -31,7 +32,7 @@ const formSchema = z.object({
 });
 
 const SelectTopicPage = () => {
-  const { control } = useForm<z.infer<typeof formSchema>>({
+  const { control, handleSubmit } = useForm<z.infer<typeof formSchema>>({
     defaultValues: {
       topic: 'Software Engineering',
     },
@@ -40,13 +41,27 @@ const SelectTopicPage = () => {
   return (
     <PageWrapper>
       <Typography.Title>{'Select a topic to start'}</Typography.Title>
-      <Controller
-        name="topic"
-        control={control}
-        render={({ field }) => (
-          <Select onChange={field.onChange} value={field.value} />
-        )}
-      />
+      <form
+        onSubmit={handleSubmit(value => {
+          console.log(value.topic);
+        })}
+      >
+        <Controller
+          name="topic"
+          control={control}
+          render={({ field }) => (
+            <Select
+              onChange={field.onChange}
+              value={field.value}
+              options={TopicEnum.options.map(option => ({
+                title: option,
+                value: option,
+              }))}
+            />
+          )}
+        />
+        <Button htmlType="submit">{'Go to the next page'}</Button>
+      </form>
     </PageWrapper>
   );
 };
