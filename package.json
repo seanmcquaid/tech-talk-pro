@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "@ant-design/icons": "^5.1.4",
-    "@clerk/nextjs": "^4.21.14",
+    "@clerk/nextjs": "^4.21.15",
     "@happykit/flags": "^3.3.0",
     "@hookform/resolvers": "^3.1.1",
     "@prisma/client": "^4.16.2",
