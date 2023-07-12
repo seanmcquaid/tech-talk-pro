@@ -14,7 +14,7 @@ const TalksPage = () => {
       <Typography.Title>{t('Talks.title')}</Typography.Title>
       <NavigationCard
         title={t('Talks.createNewTalk')}
-        route="/dashboard/talks/create"
+        route="/dashboard/talks/create/configure"
         text={t('Talks.createNewTalkInfo')}
       />
       {data?.map(talk => (

@@ -1,12 +1,14 @@
 import { combineReducers } from '@reduxjs/toolkit';
-import appReducer from './app/slice';
 import { persistReducer } from 'redux-persist';
 import createWebStorage from 'redux-persist/lib/storage/createWebStorage';
 import talksApi from './talksApi';
+import appSlice from './app/slice';
+import talkSlice from './talk/slice';
 
 const rootReducer = combineReducers({
-  app: appReducer,
+  [appSlice.name]: appSlice.reducer,
   [talksApi.reducerPath]: talksApi.reducer,
+  [talkSlice.name]: talkSlice.reducer,
 });
 
 const createNoopStorage = () => {
