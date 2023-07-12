@@ -8,24 +8,11 @@ import { setTalkLength, setTopic } from '@/store/talk/slice';
 import { useRouter } from 'next/navigation';
 import { selectTalkLength, selectTopic } from '@/store/talk/selectors';
 import Topics from '@/enums/Topics';
-import AppConstants from '@/AppConstants';
+import TalkLengths from '@/enums/TalkLengths';
 
 const formSchema = z.object({
   topic: Topics,
-  talkLength: z.union([
-    z.literal(5),
-    z.literal(10),
-    z.literal(15),
-    z.literal(20),
-    z.literal(25),
-    z.literal(30),
-    z.literal(35),
-    z.literal(40),
-    z.literal(45),
-    z.literal(50),
-    z.literal(55),
-    z.literal(60),
-  ]),
+  talkLength: TalkLengths,
 });
 
 const ConfigurePage = () => {
@@ -71,7 +58,7 @@ const ConfigurePage = () => {
             <Select
               onChange={field.onChange}
               value={field.value}
-              options={AppConstants.talkLengthOptions.map(option => ({
+              options={Object.values(TalkLengths.enum).map(option => ({
                 title: `${option} minutes`,
                 value: option,
               }))}
