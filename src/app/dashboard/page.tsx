@@ -9,11 +9,11 @@ const Dashboard = () => {
 
   return (
     <PageWrapper>
-      <Typography.Title>{t('Dashboard.title')}</Typography.Title>
+      <Typography.Title>{t('DashboardPage.title')}</Typography.Title>
       <NavigationCard
-        title={t('Dashboard.talksCardTitle')}
+        title={t('DashboardPage.talksCardTitle')}
         route="/dashboard/talks"
-        text={t('Dashboard.talksCardInfo')}
+        text={t('DashboardPage.talksCardInfo')}
       />
     </PageWrapper>
   );

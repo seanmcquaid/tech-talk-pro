@@ -1,10 +1,12 @@
 import PageWrapper from '@/components/PageWrapper';
 import { SignIn } from '@clerk/nextjs';
 
-export default function Page() {
+const SignInPage = () => {
   return (
     <PageWrapper isCentered>
       <SignIn />
     </PageWrapper>
   );
-}
+};
+
+export default SignInPage;

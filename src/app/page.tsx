@@ -21,14 +21,14 @@ const Home = () => {
           <UserButton />
         ) : (
           <Button type="link" onClick={() => router.push('/sign-in')}>
-            {t('Home.signIn')}
+            {t('HomePage.signIn')}
           </Button>
         )}
       </StyledHeader>
       <PageWrapper isCentered>
         <TitleWrapper>
           <Title>{t('App.appName')}</Title>
-          <Paragraph>{t('Home.subtitle')}</Paragraph>
+          <Paragraph>{t('HomePage.subtitle')}</Paragraph>
         </TitleWrapper>
       </PageWrapper>
       <StyledFooter>
