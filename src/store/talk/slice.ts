@@ -1,11 +1,11 @@
-import AppConstants from '@/AppConstants';
+import TalkLengths from '@/enums/TalkLengths';
 import Topics from '@/enums/Topics';
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import { z } from 'zod';
 
 export interface TalkState {
   topic: z.infer<typeof Topics>;
-  talkLength: (typeof AppConstants.talkLengthOptions)[number];
+  talkLength: z.infer<typeof TalkLengths>;
 }
 
 const initialState: TalkState = {
@@ -22,7 +22,7 @@ export const talkSlice = createSlice({
     },
     setTalkLength: (
       state,
-      action: PayloadAction<(typeof AppConstants.talkLengthOptions)[number]>,
+      action: PayloadAction<z.infer<typeof TalkLengths>>,
     ) => {
       state.talkLength = action.payload;
     },
