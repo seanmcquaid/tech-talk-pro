@@ -22,6 +22,10 @@ const enUSLocale = {
     subtitle:
       'The easiest way for you to prepare to apply to your first tech conference!',
   },
+  NotFoundPage: {
+    goHome: 'Go Home',
+    title: 'Page Not Found',
+  },
   TalksPage: {
     createNewTalk: 'Create New Talk',
     createNewTalkInfo:
