@@ -9,6 +9,7 @@ import { useRouter } from 'next/navigation';
 import { selectTalkLength, selectTopic } from '@/store/talk/selectors';
 import Topics from '@/enums/Topics';
 import TalkLengths from '@/enums/TalkLengths';
+import useAppTranslation from '@/hooks/useAppTranslation';
 
 const formSchema = z.object({
   topic: Topics,
@@ -16,6 +17,7 @@ const formSchema = z.object({
 });
 
 const ConfigurePage = () => {
+  const { t } = useAppTranslation();
   const talkLength = useSelector(selectTalkLength);
   const topic = useSelector(selectTopic);
   const { control, handleSubmit } = useForm<z.infer<typeof formSchema>>({
@@ -35,7 +37,8 @@ const ConfigurePage = () => {
 
   return (
     <PageWrapper>
-      <Typography.Title>{'Select a topic to start'}</Typography.Title>
+      <Typography.Title>{t('ConfigurePage.title')}</Typography.Title>
+      <Typography.Paragraph>{t('ConfigurePage.subtitle')}</Typography.Paragraph>
       <form onSubmit={onSubmit}>
         <Controller
           name="topic"
@@ -59,13 +62,13 @@ const ConfigurePage = () => {
               onChange={field.onChange}
               value={field.value}
               options={Object.values(TalkLengths.enum).map(option => ({
-                title: `${option} minutes`,
+                title: t('ConfigurePage.minutes', { numberOfMinutes: option }),
                 value: option,
               }))}
             />
           )}
         />
-        <Button htmlType="submit">{'Go to the next page'}</Button>
+        <Button htmlType="submit">{t('ConfigurePage.goToNextPage')}</Button>
       </form>
     </PageWrapper>
   );

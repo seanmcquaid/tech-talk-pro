@@ -11,11 +11,11 @@ const TalksPage = () => {
 
   return (
     <PageWrapper>
-      <Typography.Title>{t('Talks.title')}</Typography.Title>
+      <Typography.Title>{t('TalksPage.title')}</Typography.Title>
       <NavigationCard
-        title={t('Talks.createNewTalk')}
+        title={t('TalksPage.createNewTalk')}
         route="/dashboard/talks/create/configure"
-        text={t('Talks.createNewTalkInfo')}
+        text={t('TalksPage.createNewTalkInfo')}
       />
       {data?.map(talk => (
         <NavigationCard

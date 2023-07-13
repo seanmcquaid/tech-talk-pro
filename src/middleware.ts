@@ -8,8 +8,12 @@ export const config = {
 export default authMiddleware({
   publicRoutes: ['/', '/404', '/sign-in', '/sign-up'],
   afterAuth(auth, req) {
+    if (req.nextUrl.pathname === '/' && auth.userId) {
+      const dashboardUrl = new URL('/dashboard', req.url);
+      return NextResponse.redirect(dashboardUrl);
+    }
+
     if (!auth.userId && !auth.isPublicRoute) {
-      // handle users who aren't authenticated
       const signInUrl = new URL('/sign-in', req.url);
       signInUrl.searchParams.set('redirect_url', req.url);
       return NextResponse.redirect(signInUrl);
