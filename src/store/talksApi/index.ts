@@ -1,15 +1,15 @@
-import talksService from '@/services/talksService';
 import type { Talk } from '@prisma/client';
-import { fetchBaseQuery, createApi } from '@reduxjs/toolkit/query/react';
+import { createApi } from '@reduxjs/toolkit/query/react';
+import kyBaseQuery from '../kyBaseQuery';
 
 const talksApi = createApi({
   reducerPath: 'talksApi',
-  baseQuery: fetchBaseQuery(),
+  baseQuery: kyBaseQuery({
+    baseUrl: '/api',
+  }),
   endpoints: builder => ({
     getTalks: builder.query<Talk[], void>({
-      queryFn: async () => {
-        return { data: await talksService.getTalks() };
-      },
+      query: () => ({ url: 'talks' }),
     }),
   }),
 });
