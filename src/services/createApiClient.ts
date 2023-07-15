@@ -15,9 +15,14 @@ const createApiClient = (baseUrl: string) => {
           }
 
           const data = await response.json();
-          return new Response(
-            JSON.stringify(options.validationSchema.parse(data)),
-          );
+
+          const validatedData = options.validationSchema.safeParse(data);
+
+          if (!validatedData.success) {
+            console.log('API Validation Error', validatedData.error);
+          }
+
+          return response;
         },
       ],
       beforeError: [
