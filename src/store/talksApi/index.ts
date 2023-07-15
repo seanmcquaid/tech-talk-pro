@@ -1,5 +1,5 @@
 import talksService from '@/services/talksService';
-import { Talk } from '@prisma/client';
+import type { Talk } from '@prisma/client';
 import { fetchBaseQuery, createApi } from '@reduxjs/toolkit/query/react';
 
 const talksApi = createApi({

@@ -20,6 +20,17 @@ const createApiClient = (baseUrl: string) => {
           );
         },
       ],
+      beforeError: [
+        async error => {
+          try {
+            const response = await error.response.json();
+            error.responseData = response;
+            return error;
+          } catch (e) {
+            return error;
+          }
+        },
+      ],
     },
   });
 };

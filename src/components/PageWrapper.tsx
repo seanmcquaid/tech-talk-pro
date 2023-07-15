@@ -1,6 +1,6 @@
 'use client';
 import { Layout } from 'antd';
-import { PropsWithChildren } from 'react';
+import type { PropsWithChildren } from 'react';
 import styled from 'styled-components';
 
 interface PageWrapperProps extends PropsWithChildren {

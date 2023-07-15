@@ -4,7 +4,7 @@ import { DesktopOutlined } from '@ant-design/icons';
 import { UserButton } from '@clerk/nextjs';
 import { Layout, theme, Menu } from 'antd';
 import { useRouter } from 'next/navigation';
-import { PropsWithChildren } from 'react';
+import type { PropsWithChildren } from 'react';
 import styled from 'styled-components';
 
 const { Header, Footer, Sider } = Layout;

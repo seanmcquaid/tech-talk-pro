@@ -1,5 +1,5 @@
-import enUSLocale from '@/i18n/locales/en-US';
-import { TOptions } from 'i18next';
+import type enUSLocale from '@/i18n/locales/en-US';
+import type { TOptions } from 'i18next';
 import { useTranslation } from 'react-i18next';
 
 type DotPrefix<T extends string> = T extends '' ? '' : `.${T}`;

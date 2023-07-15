@@ -1,6 +1,6 @@
-import { PropsWithChildren, ReactElement } from 'react';
+import type { PropsWithChildren, ReactElement } from 'react';
 import { render, renderHook } from '@testing-library/react';
-import { RootState } from '@/store';
+import type { RootState } from '@/store';
 import { Provider } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit';
 import persistedReducer from '@/store/persistedReducer';

@@ -2,7 +2,8 @@
 import { useAppDispatch } from '@/store';
 import { selectIsInitialized } from '@/store/app/selectors';
 import { setInitialized } from '@/store/app/slice';
-import { PropsWithChildren, useEffect } from 'react';
+import type { PropsWithChildren} from 'react';
+import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import LoadingSpinner from './LoadingSpinner';
 
