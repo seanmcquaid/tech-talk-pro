@@ -1,4 +1,4 @@
-import { Talk } from '@prisma/client';
+import type { Talk } from '@prisma/client';
 import createApiClient from './createApiClient';
 
 const apiClient = createApiClient('/api');

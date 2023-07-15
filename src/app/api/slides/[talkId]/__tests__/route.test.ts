@@ -1,10 +1,10 @@
 import { mockDb } from '@/setupTests';
 import { auth } from '@clerk/nextjs';
-import { SignedInAuthObject } from '@clerk/nextjs/dist/types/server';
-import { MockedFunction } from 'vitest';
+import type { SignedInAuthObject } from '@clerk/nextjs/dist/types/server';
+import type { MockedFunction } from 'vitest';
 import { GET, POST } from '../route';
-import { NextRequest } from 'next/server';
-import { Slide } from '@prisma/client';
+import type { NextRequest } from 'next/server';
+import type { Slide } from '@prisma/client';
 
 vi.mock('@clerk/nextjs');
 

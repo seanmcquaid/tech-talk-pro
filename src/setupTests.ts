@@ -1,8 +1,9 @@
 import type { TestingLibraryMatchers } from '@testing-library/jest-dom/matchers';
 import matchers from '@testing-library/jest-dom/matchers';
 import { expect } from 'vitest';
-import { PrismaClient } from '@prisma/client';
-import { mockDeep, DeepMockProxy } from 'vitest-mock-extended';
+import type { PrismaClient } from '@prisma/client';
+import type { DeepMockProxy } from 'vitest-mock-extended';
+import { mockDeep } from 'vitest-mock-extended';
 
 import db from '@/utils/db';
 

@@ -1,6 +1,6 @@
+import createApiClient from '@/services/createApiClient';
 import type { BaseQueryFn } from '@reduxjs/toolkit/dist/query';
 import type { HTTPError, Options } from 'ky';
-import ky from 'ky';
 
 interface KyBaseQuery extends Options {
   url: string;
@@ -12,12 +12,14 @@ const kyBaseQuery =
   ): BaseQueryFn<KyBaseQuery, unknown, unknown> =>
   async ({ url, ...rest }) => {
     try {
-      const result = await ky(baseUrl + url, {
+      const apiClient = createApiClient(baseUrl);
+      const result = await apiClient(url, {
         ...rest,
       });
       return { data: await result.json() };
     } catch (err) {
       const httpError = err as HTTPError;
+
       return {
         error: {
           status: httpError.response.status,

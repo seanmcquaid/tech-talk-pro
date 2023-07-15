@@ -1,7 +1,7 @@
 import { mockDb } from '@/setupTests';
-import { Slide } from '@prisma/client';
+import type { Slide } from '@prisma/client';
 import { DELETE, PUT } from '../route';
-import { NextRequest } from 'next/server';
+import type { NextRequest } from 'next/server';
 
 describe('/slides/[talkId]/[slideId]', () => {
   describe('DELETE', () => {

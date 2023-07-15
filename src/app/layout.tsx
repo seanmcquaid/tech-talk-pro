@@ -5,7 +5,7 @@ import ReduxProvider from '@/store/ReduxProvider';
 import InitializeApp from '@/components/InitializeApp';
 import '@/i18n/client';
 import 'antd/dist/reset.css';
-import { PropsWithChildren } from 'react';
+import type { PropsWithChildren } from 'react';
 import '@/env.client';
 import '@/env.server';
 import AppThemeProvider from '@/styles/AppThemeProvider';

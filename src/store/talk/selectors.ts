@@ -1,5 +1,5 @@
 import { createSelector } from 'reselect';
-import { RootState } from '..';
+import type { RootState } from '..';
 
 export const selectTalkState = (state: RootState) => state.talk;
 
