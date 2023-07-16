@@ -6,9 +6,17 @@ const promptApi = createApi({
   baseQuery: kyBaseQuery({
     baseUrl: '/api/prompt',
   }),
-  endpoints: builder => ({}),
+  endpoints: builder => ({
+    promptTalkTitles: builder.mutation<unknown, { prompt: string }>({
+      query: ({ prompt }) => ({
+        url: 'talkTitles',
+        method: 'post',
+        json: { prompt },
+      }),
+    }),
+  }),
 });
 
-export const {} = promptApi;
+export const { usePromptTalkTitlesMutation } = promptApi;
 
 export default promptApi;

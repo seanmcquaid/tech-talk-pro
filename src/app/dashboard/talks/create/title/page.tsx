@@ -1,33 +1,31 @@
 'use client';
 import PageWrapper from '@/components/PageWrapper';
 import { Typography, Button, Input } from 'antd';
-import { Controller, useForm } from 'react-hook-form';
-import { z } from 'zod';
-
-const formSchema = z.object({
-  prompt: z.string().nonempty(),
-});
+import { useChat } from 'ai/react';
 
 const SelectTitlePage = () => {
-  const { handleSubmit, control } = useForm<z.infer<typeof formSchema>>({
-    defaultValues: {
-      prompt: '',
-    },
-  });
-
-  const onSubmit = handleSubmit(values => {
-    console.log(values);
+  const {
+    messages,
+    handleSubmit: handleChatSubmit,
+    input,
+    handleInputChange,
+  } = useChat({
+    api: '/api/prompt/talkTitles',
   });
 
   return (
     <PageWrapper>
       <Typography.Title>{'Time to figure out your title!'}</Typography.Title>
-      <form onSubmit={onSubmit}>
-        <Controller
-          name="prompt"
-          control={control}
-          render={({ field }) => <Input {...field} />}
-        />
+      <form onSubmit={handleChatSubmit}>
+        <ul>
+          {messages.map((m, index) => (
+            <li key={index}>
+              {m.role === 'user' ? 'User: ' : 'AI: '}
+              {m.content}
+            </li>
+          ))}
+        </ul>
+        <Input value={input} onChange={handleInputChange} />
         <Button htmlType="submit">{'Prompt'}</Button>
       </form>
     </PageWrapper>
