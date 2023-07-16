@@ -9,8 +9,7 @@ declare module 'ky' {
     validationSchema?: ZodFirstPartySchemaTypes;
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  export interface HTTPError<T = any> {
+  export interface HTTPError<T = unknown> {
     responseData?: T;
   }
 }

@@ -6,10 +6,15 @@ interface KyBaseQuery extends Options {
   url: string;
 }
 
+interface KyBaseQueryError {
+  status: number;
+  data: unknown;
+}
+
 const kyBaseQuery =
   (
     { baseUrl }: { baseUrl: string } = { baseUrl: '' },
-  ): BaseQueryFn<KyBaseQuery, unknown, unknown> =>
+  ): BaseQueryFn<KyBaseQuery, unknown, KyBaseQueryError> =>
   async ({ url, ...rest }) => {
     try {
       const apiClient = createApiClient(baseUrl);

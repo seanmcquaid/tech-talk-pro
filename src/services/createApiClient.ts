@@ -1,4 +1,4 @@
-import ky from 'ky';
+import ky, { HTTPError } from 'ky';
 
 const createApiClient = (baseUrl: string) => {
   return ky.create({
@@ -7,9 +7,10 @@ const createApiClient = (baseUrl: string) => {
       limit: 2,
       statusCodes: [401, 403, 500, 504],
     },
+    throwHttpErrors: false,
     hooks: {
       afterResponse: [
-        async (_, options, response) => {
+        async (request, options, response) => {
           if (!response.ok || !options.validationSchema) {
             return response;
           }
@@ -19,7 +20,17 @@ const createApiClient = (baseUrl: string) => {
           const validatedData = options.validationSchema.safeParse(data);
 
           if (!validatedData.success) {
-            console.log('API Validation Error', validatedData.error);
+            const httpError = new HTTPError(
+              new Response(null, {
+                status: 422,
+                statusText: 'API Validation Error',
+              }),
+              request,
+              options,
+            );
+
+            httpError.responseData = validatedData.error.errors;
+            throw httpError;
           }
 
           return response;
