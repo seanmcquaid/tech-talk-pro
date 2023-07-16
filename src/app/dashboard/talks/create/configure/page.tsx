@@ -45,8 +45,7 @@ const ConfigurePage = () => {
           control={control}
           render={({ field }) => (
             <Select
-              onChange={field.onChange}
-              value={field.value}
+              {...field}
               options={Topics.options.map(option => ({
                 title: option,
                 value: option,
@@ -59,8 +58,7 @@ const ConfigurePage = () => {
           control={control}
           render={({ field }) => (
             <Select
-              onChange={field.onChange}
-              value={field.value}
+              {...field}
               options={Object.values(TalkLengths.enum).map(option => ({
                 title: t('ConfigurePage.minutes', { numberOfMinutes: option }),
                 value: option,
