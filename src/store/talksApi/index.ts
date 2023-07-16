@@ -1,7 +1,6 @@
 import type { Talk } from '@prisma/client';
 import { createApi } from '@reduxjs/toolkit/query/react';
 import kyBaseQuery from '../kyBaseQuery';
-import { z } from 'zod';
 
 const talksApi = createApi({
   reducerPath: 'talksApi',
