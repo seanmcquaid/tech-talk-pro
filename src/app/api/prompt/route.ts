@@ -1,4 +1,9 @@
-import { Configuration, OpenAIApi } from 'openai-edge';
+import type {
+  ChatCompletionRequestMessage} from 'openai-edge';
+import {
+  Configuration,
+  OpenAIApi,
+} from 'openai-edge';
 import { OpenAIStream, StreamingTextResponse } from 'ai';
 import type { NextRequest } from 'next/server';
 import serverEnv from '@/env.server';
@@ -12,7 +17,8 @@ const apiConfig = new Configuration({
 const openai = new OpenAIApi(apiConfig);
 
 export async function POST(request: NextRequest) {
-  const messages = await request.json();
+  const body = await request.json();
+  const messages = body.messages as ChatCompletionRequestMessage[];
 
   const response = await openai.createChatCompletion({
     model: 'gpt-3.5-turbo',

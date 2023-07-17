@@ -27,6 +27,7 @@ model Talk {
   talkLength Int
   createdAt DateTime @default(now())
   abstract  String
-  topic    String
+  topic     String
   userId    String
+  category  String
 }

@@ -6,23 +6,24 @@ import { Controller, useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
 import { setTalkLength, setTopic } from '@/store/talk/slice';
 import { useRouter } from 'next/navigation';
-import { selectTalkLength, selectTopic } from '@/store/talk/selectors';
-import Topics from '@/enums/Topics';
+import { selectTalkCategory, selectTalkLength } from '@/store/talk/selectors';
 import TalkLengths from '@/enums/TalkLengths';
 import useAppTranslation from '@/hooks/useAppTranslation';
+import TalkCategories from '@/enums/TalkCategories';
 
 const formSchema = z.object({
-  topic: Topics,
+  talkCategory: TalkCategories,
   talkLength: TalkLengths,
 });
 
 const ConfigurePage = () => {
   const { t } = useAppTranslation();
   const talkLength = useSelector(selectTalkLength);
-  const topic = useSelector(selectTopic);
+  const talkCategory = useSelector(selectTalkCategory);
+  console.log(talkCategory);
   const { control, handleSubmit } = useForm<z.infer<typeof formSchema>>({
     defaultValues: {
-      topic,
+      talkCategory,
       talkLength,
     },
   });
@@ -31,8 +32,8 @@ const ConfigurePage = () => {
 
   const onSubmit = handleSubmit(value => {
     dispatch(setTalkLength(value.talkLength));
-    dispatch(setTopic(value.topic));
-    router.push('/dashboard/talks/create/title');
+    dispatch(setTopic(value.talkCategory));
+    router.push('/dashboard/talks/create/topic');
   });
 
   return (
@@ -41,12 +42,12 @@ const ConfigurePage = () => {
       <Typography.Paragraph>{t('ConfigurePage.subtitle')}</Typography.Paragraph>
       <form onSubmit={onSubmit}>
         <Controller
-          name="topic"
+          name="talkCategory"
           control={control}
           render={({ field }) => (
             <Select
               {...field}
-              options={Topics.options.map(option => ({
+              options={TalkCategories.options.map(option => ({
                 title: option,
                 value: option,
               }))}
