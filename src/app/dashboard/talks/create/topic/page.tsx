@@ -1,6 +1,6 @@
 'use client';
 import PageWrapper from '@/components/PageWrapper';
-import { Typography, Button, Input } from 'antd';
+import { Typography, Button } from 'antd';
 import { useChat } from 'ai/react';
 import { selectTalkCategory } from '@/store/talk/selectors';
 import { useSelector } from 'react-redux';
