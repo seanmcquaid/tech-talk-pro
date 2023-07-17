@@ -33,7 +33,7 @@ const persistConfig = {
     typeof window !== 'undefined'
       ? createWebStorage('local')
       : createNoopStorage(),
-  blacklist: ['app', 'talksApi', 'promptApi'],
+  blacklist: ['app', 'talksApi'],
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
