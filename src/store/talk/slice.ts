@@ -7,22 +7,27 @@ import type TalkCategories from '@/enums/TalkCategories';
 export interface TalkState {
   talkCategory: z.infer<typeof TalkCategories>;
   talkLength: z.infer<typeof TalkLengths>;
+  topic: string;
 }
 
 const initialState: TalkState = {
   talkCategory: 'Software Engineering',
   talkLength: 30,
+  topic: '',
 };
 
 export const talkSlice = createSlice({
   name: 'talk',
   initialState,
   reducers: {
-    setTopic: (
+    setTalkCategory: (
       state,
       action: PayloadAction<z.infer<typeof TalkCategories>>,
     ) => {
       state.talkCategory = action.payload;
+    },
+    setTopic: (state, action: PayloadAction<string>) => {
+      state.topic = action.payload;
     },
     setTalkLength: (
       state,
