@@ -16,7 +16,7 @@ dependencies:
     version: 3.3.0(next@13.4.9)(react@18.2.0)
   '@hookform/resolvers':
     specifier: ^3.1.1
-    version: 3.1.1(react-hook-form@7.45.1)
+    version: 3.1.1(react-hook-form@7.45.2)
   '@prisma/client':
     specifier: ^5.0.0
     version: 5.0.0(prisma@5.0.0)
@@ -25,7 +25,7 @@ dependencies:
     version: 1.9.5(react-redux@8.1.1)(react@18.2.0)
   '@sentry/nextjs':
     specifier: latest
-    version: 7.57.0(next@13.4.9)(react@18.2.0)
+    version: 7.59.2(next@13.4.9)(react@18.2.0)
   '@vercel/analytics':
     specifier: ^1.0.1
     version: 1.0.1
@@ -54,8 +54,8 @@ dependencies:
     specifier: 18.2.0
     version: 18.2.0(react@18.2.0)
   react-hook-form:
-    specifier: ^7.45.1
-    version: 7.45.1(react@18.2.0)
+    specifier: ^7.45.2
+    version: 7.45.2(react@18.2.0)
   react-i18next:
     specifier: ^13.0.2
     version: 13.0.2(i18next@23.2.9)(react-dom@18.2.0)(react@18.2.0)
@@ -1961,12 +1961,12 @@ packages:
       react: 18.2.0
     dev: false
 
-  /@hookform/resolvers@3.1.1(react-hook-form@7.45.1):
+  /@hookform/resolvers@3.1.1(react-hook-form@7.45.2):
     resolution: {integrity: sha512-tS16bAUkqjITNSvbJuO1x7MXbn7Oe8ZziDTJdA9mMvsoYthnOOiznOTGBYwbdlYBgU+tgpI/BtTU3paRbCuSlg==}
     peerDependencies:
       react-hook-form: ^7.0.0
     dependencies:
-      react-hook-form: 7.45.1(react@18.2.0)
+      react-hook-form: 7.45.2(react@18.2.0)
     dev: false
 
   /@humanwhocodes/config-array@0.11.10:
@@ -2379,25 +2379,25 @@ packages:
     resolution: {integrity: sha512-V+MvGwaHH03hYhY+k6Ef/xKd6RYlc4q8WBx+2ANmipHJcKuktNcI/NgEsJgdSUF6Lw32njT6OnrRsKYCdgHjYw==}
     dev: true
 
-  /@sentry-internal/tracing@7.57.0:
-    resolution: {integrity: sha512-tpViyDd8AhQGYYhI94xi2aaDopXOPfL2Apwrtb3qirWkomIQ2K86W1mPmkce+B0cFOnW2Dxv/ZTFKz6ghjK75A==}
+  /@sentry-internal/tracing@7.59.2:
+    resolution: {integrity: sha512-02gteChV/lMobWU06VlITq+myEWk0MzhnDCm8n/DMigB47I9HkWZFAJ+CYG6Ns0rTL+3+/c2V0bPyQkZwIC+Sg==}
     engines: {node: '>=8'}
     dependencies:
-      '@sentry/core': 7.57.0
-      '@sentry/types': 7.57.0
-      '@sentry/utils': 7.57.0
+      '@sentry/core': 7.59.2
+      '@sentry/types': 7.59.2
+      '@sentry/utils': 7.59.2
       tslib: 2.5.3
     dev: false
 
-  /@sentry/browser@7.57.0:
-    resolution: {integrity: sha512-E0HaYYlaqHFiIRZXxcvOO8Odvlt+TR1vFFXzqUWXPOvDRxURglTOCQ3EN/u6bxtAGJ6y/Zc2obgihTtypuel/w==}
+  /@sentry/browser@7.59.2:
+    resolution: {integrity: sha512-N1JiBs1VRR5DV0209TZgaMwRGiTYN1C34sFzIW7nuC82X4gHy3tuJjZPlMDTtgFrALBMJ24yQ7D4HJjXrS2+Dw==}
     engines: {node: '>=8'}
     dependencies:
-      '@sentry-internal/tracing': 7.57.0
-      '@sentry/core': 7.57.0
-      '@sentry/replay': 7.57.0
-      '@sentry/types': 7.57.0
-      '@sentry/utils': 7.57.0
+      '@sentry-internal/tracing': 7.59.2
+      '@sentry/core': 7.59.2
+      '@sentry/replay': 7.59.2
+      '@sentry/types': 7.59.2
+      '@sentry/utils': 7.59.2
       tslib: 2.5.3
     dev: false
 
@@ -2418,27 +2418,27 @@ packages:
       - supports-color
     dev: false
 
-  /@sentry/core@7.57.0:
-    resolution: {integrity: sha512-l014NudPH0vQlzybtXajPxYFfs9w762NoarjObC3gu76D1jzBBFzhdRelkGpDbSLNTIsKhEDDRpgAjBWJ9icfw==}
+  /@sentry/core@7.59.2:
+    resolution: {integrity: sha512-GRhoPw6b6GkvOsa060aREc9yyHjgAKITgITNbzUmn0GqIeWD5SMoCBAcENRHVgUnpQWOpnkEF1/sqxvwx+rf6Q==}
     engines: {node: '>=8'}
     dependencies:
-      '@sentry/types': 7.57.0
-      '@sentry/utils': 7.57.0
+      '@sentry/types': 7.59.2
+      '@sentry/utils': 7.59.2
       tslib: 2.5.3
     dev: false
 
-  /@sentry/integrations@7.57.0:
-    resolution: {integrity: sha512-C3WZo5AGI2L0dj+mIjeZpdAwDEG2nDYvZbTzq5J9hVoHFdP3t7fOWBHSPkSFVtTdMaJrv+82aKnUefVCeAjxGg==}
+  /@sentry/integrations@7.59.2:
+    resolution: {integrity: sha512-1PUcS+OlITbdnXWEm4IRasqAApZIXynm+3tHcZcVXla33LxQV77VWzsrFmPgoNW5r0TktEwXyoiXxP4DvgJ9Kg==}
     engines: {node: '>=8'}
     dependencies:
-      '@sentry/types': 7.57.0
-      '@sentry/utils': 7.57.0
+      '@sentry/types': 7.59.2
+      '@sentry/utils': 7.59.2
       localforage: 1.10.0
       tslib: 2.5.3
     dev: false
 
-  /@sentry/nextjs@7.57.0(next@13.4.9)(react@18.2.0):
-    resolution: {integrity: sha512-TH7Hhs833j1k2rM5K3AqiQ7+bxrTzANZazBLEK1YVec02PpnqflVuBHSdFxT6dG7ypxOpMkN36BN5INY5HHT0Q==}
+  /@sentry/nextjs@7.59.2(next@13.4.9)(react@18.2.0):
+    resolution: {integrity: sha512-XGXO+HxacFZXBQy4iUbn0+ISnVm2eSvy+w1tL94PMBZpQXuyBB45DqFYpsgv/ugEtoszQazSEd2S2uhyW8TcsQ==}
     engines: {node: '>=8'}
     peerDependencies:
       next: ^10.0.8 || ^11.0 || ^12.0 || ^13.0
@@ -2449,12 +2449,12 @@ packages:
         optional: true
     dependencies:
       '@rollup/plugin-commonjs': 24.0.0(rollup@2.78.0)
-      '@sentry/core': 7.57.0
-      '@sentry/integrations': 7.57.0
-      '@sentry/node': 7.57.0
-      '@sentry/react': 7.57.0(react@18.2.0)
-      '@sentry/types': 7.57.0
-      '@sentry/utils': 7.57.0
+      '@sentry/core': 7.59.2
+      '@sentry/integrations': 7.59.2
+      '@sentry/node': 7.59.2
+      '@sentry/react': 7.59.2(react@18.2.0)
+      '@sentry/types': 7.59.2
+      '@sentry/utils': 7.59.2
       '@sentry/webpack-plugin': 1.20.0
       chalk: 3.0.0
       next: 13.4.9(@babel/core@7.22.5)(react-dom@18.2.0)(react@18.2.0)
@@ -2467,14 +2467,14 @@ packages:
       - supports-color
     dev: false
 
-  /@sentry/node@7.57.0:
-    resolution: {integrity: sha512-63mjyUVM6sfJFVQ5TGVRVGUsoEfESl5ABzIW1W0s9gUiQPaG8SOdaQJglb2VNrkMYxnRHgD8Q9LUh/qcmUyPGw==}
+  /@sentry/node@7.59.2:
+    resolution: {integrity: sha512-cvTW4VwQdvNeAtBGVGE5hGmsWstGK4PwWe5PccBWJBQGM/rYzwk2tM9ZQnM5M5+yDV4bZ+21sJhvyhsHoTjmzQ==}
     engines: {node: '>=8'}
     dependencies:
-      '@sentry-internal/tracing': 7.57.0
-      '@sentry/core': 7.57.0
-      '@sentry/types': 7.57.0
-      '@sentry/utils': 7.57.0
+      '@sentry-internal/tracing': 7.59.2
+      '@sentry/core': 7.59.2
+      '@sentry/types': 7.59.2
+      '@sentry/utils': 7.59.2
       cookie: 0.4.2
       https-proxy-agent: 5.0.1
       lru_map: 0.3.3
@@ -2483,39 +2483,39 @@ packages:
       - supports-color
     dev: false
 
-  /@sentry/react@7.57.0(react@18.2.0):
-    resolution: {integrity: sha512-XGNTjIoCG3naSmCU8qObd+y+CqAB6NQkGWOp2yyBwp2inyKF2ehJvDh6bIQloBYq2TmOJDa4NfXdMrkilxaLFQ==}
+  /@sentry/react@7.59.2(react@18.2.0):
+    resolution: {integrity: sha512-n7m1GbBfCjvc/tLx8+wRNr/ol7VtGNsqAZ++mPoeMyT8WWkj17rDyTgShB1PQoevAAoZ74XJUEVg3MliOdEIrA==}
     engines: {node: '>=8'}
     peerDependencies:
       react: 15.x || 16.x || 17.x || 18.x
     dependencies:
-      '@sentry/browser': 7.57.0
-      '@sentry/types': 7.57.0
-      '@sentry/utils': 7.57.0
+      '@sentry/browser': 7.59.2
+      '@sentry/types': 7.59.2
+      '@sentry/utils': 7.59.2
       hoist-non-react-statics: 3.3.2
       react: 18.2.0
       tslib: 2.5.3
     dev: false
 
-  /@sentry/replay@7.57.0:
-    resolution: {integrity: sha512-pN4ryNS3J5EYbkXvR+O/+hseAJha7XDl8mPFtK0OGTHG10JzCi4tQJazblHQdpb5QBaMMPCeZ+isyfoQLDNXnw==}
+  /@sentry/replay@7.59.2:
+    resolution: {integrity: sha512-Ma72ofTdtSinBY5GH0zM7k8o/WsdaVdPP/1iyFbcWQDt8dnrcsJVUKK0t9+8gijpiSMUKE+vjFjQNL9/PGYekw==}
     engines: {node: '>=12'}
     dependencies:
-      '@sentry/core': 7.57.0
-      '@sentry/types': 7.57.0
-      '@sentry/utils': 7.57.0
+      '@sentry/core': 7.59.2
+      '@sentry/types': 7.59.2
+      '@sentry/utils': 7.59.2
     dev: false
 
-  /@sentry/types@7.57.0:
-    resolution: {integrity: sha512-D7ifoUfxuVCUyktIr5Gc+jXUbtcUMmfHdTtTbf1XCZHua5mJceK9wtl3YCg3eq/HK2Ppd52BKnTzEcS5ZKQM+w==}
+  /@sentry/types@7.59.2:
+    resolution: {integrity: sha512-rylG7UQ0cC/xbV6trSuaAE/bsruSZy92jxQ1/KSOYKwBBvRFPXJBuiBtA81b8eYa4THZ+mE/ol2qOTJYuuV4Ug==}
     engines: {node: '>=8'}
     dev: false
 
-  /@sentry/utils@7.57.0:
-    resolution: {integrity: sha512-YXrkMCiNklqkXctn4mKYkrzNCf/dfVcRUQrkXjeBC+PHXbcpPyaJgInNvztR7Skl8lE3JPGPN4v5XhLxK1bUUg==}
+  /@sentry/utils@7.59.2:
+    resolution: {integrity: sha512-uxC8xH9wsB/tZUnjmaQ1uGtsumFOc19KWfedVHXzcNwqdt5uS3EB4+D1d8WwiJyLy2nm61DdmTC9SiB4HS+OSw==}
     engines: {node: '>=8'}
     dependencies:
-      '@sentry/types': 7.57.0
+      '@sentry/types': 7.59.2
       tslib: 2.5.3
     dev: false
 
@@ -6469,8 +6469,8 @@ packages:
       react: 18.2.0
       scheduler: 0.23.0
 
-  /react-hook-form@7.45.1(react@18.2.0):
-    resolution: {integrity: sha512-6dWoFJwycbuFfw/iKMcl+RdAOAOHDiF11KWYhNDRN/OkUt+Di5qsZHwA0OwsVnu9y135gkHpTw9DJA+WzCeR9w==}
+  /react-hook-form@7.45.2(react@18.2.0):
+    resolution: {integrity: sha512-9s45OdTaKN+4NSTbXVqeDITd/nwIg++nxJGL8+OD5uf1DxvhsXQ641kaYHk5K28cpIOTYm71O/fYk7rFaygb3A==}
     engines: {node: '>=12.22.0'}
     peerDependencies:
       react: ^16.8.0 || ^17 || ^18
