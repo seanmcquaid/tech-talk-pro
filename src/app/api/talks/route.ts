@@ -1,7 +1,7 @@
 import { createTalkBodySchema } from '@/types/requests/CreateTalkBody';
 import db from '@/utils/db';
 import { auth } from '@clerk/nextjs';
-import type { NextRequest} from 'next/server';
+import type { NextRequest } from 'next/server';
 import { NextResponse } from 'next/server';
 
 export async function GET() {
@@ -25,7 +25,7 @@ export async function POST(request: NextRequest) {
   try {
     const { userId } = auth();
     const body = await request.json();
-    const { title, talkLength, abstract, topic } =
+    const { title, talkLength, abstract, topic, category } =
       createTalkBodySchema.parse(body);
     const talk = await db.talk.create({
       data: {
@@ -34,6 +34,7 @@ export async function POST(request: NextRequest) {
         talkLength,
         abstract,
         topic,
+        category,
       },
     });
     return NextResponse.json(talk);

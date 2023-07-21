@@ -24,7 +24,6 @@ const kyBaseQuery =
       });
       return { data: await result.json() };
     } catch (err) {
-      console.log('Api client', Object.entries(err), err);
       const httpError = err as HTTPError;
 
       return {
