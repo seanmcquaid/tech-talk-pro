@@ -30,6 +30,7 @@ describe('/talks', () => {
           talkLength: 30,
           abstract: 'Test',
           topic: 'Test',
+          category: 'Test category',
         }),
       } as NextRequest);
       expect(result.status).toBe(200);
@@ -41,6 +42,7 @@ describe('/talks', () => {
           talkLength: '30',
           abstract: 'Test',
           topic: 'Test',
+          category: 'Test category',
         }),
       } as NextRequest);
       expect(result.status).toBe(500);
