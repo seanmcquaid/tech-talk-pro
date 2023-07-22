@@ -3,13 +3,14 @@ import PageWrapper from '@/components/PageWrapper';
 import { Button, Select, Typography } from 'antd';
 import { z } from 'zod';
 import { Controller, useForm } from 'react-hook-form';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { setTalkLength, setTopic } from '@/store/talk/slice';
 import { useRouter } from 'next/navigation';
 import { selectTalkCategory, selectTalkLength } from '@/store/talk/selectors';
 import TalkLengths from '@/enums/TalkLengths';
 import useAppTranslation from '@/hooks/useAppTranslation';
 import TalkCategories from '@/enums/TalkCategories';
+import { useAppDispatch } from '@/store';
 
 const formSchema = z.object({
   talkCategory: TalkCategories,
@@ -27,7 +28,7 @@ const ConfigurePage = () => {
       talkLength,
     },
   });
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const router = useRouter();
 
   const onSubmit = handleSubmit(value => {

@@ -3,14 +3,16 @@ import PageWrapper from '@/components/PageWrapper';
 import { Typography, Button } from 'antd';
 import { useChat } from 'ai/react';
 import { selectTalkCategory } from '@/store/talk/selectors';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 import { setTopic } from '@/store/talk/slice';
 import { useRouter } from 'next/navigation';
+import { useAppDispatch } from '@/store';
+import LoadingSpinner from '@/components/LoadingSpinner';
 
 const SelectTopicPage = () => {
   const talkCategory = useSelector(selectTalkCategory);
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const { messages, handleSubmit, reload, isLoading, error } = useChat({
     api: '/api/prompt',
     initialInput: `Give me a list of ten tech conference talk topics focused on ${talkCategory}`,
@@ -48,20 +50,26 @@ const SelectTopicPage = () => {
         </form>
       )}
       <ul>
-        {messages
-          .filter(message => message.role !== 'user')
-          .map((m, index) => (
-            <StyledListItem key={index}>
-              {m.content.split('\n').map(str => (
-                <span key={str}>
-                  {str}{' '}
-                  <Button onClick={() => handleSelectTopic(str)}>
-                    {'Select this topic'}
-                  </Button>
-                </span>
-              ))}
-            </StyledListItem>
-          ))}
+        {isLoading ? (
+          <LoadingSpinner />
+        ) : (
+          messages
+            .filter(message => message.role !== 'user')
+            .map((m, index) => (
+              <StyledListItem key={index}>
+                <ul>
+                  {m.content.split('\n').map(str => (
+                    <StyledListItem key={str}>
+                      <span>{str}</span>
+                      <Button onClick={() => handleSelectTopic(str)}>
+                        {'Select this topic'}
+                      </Button>
+                    </StyledListItem>
+                  ))}
+                </ul>
+              </StyledListItem>
+            ))
+        )}
       </ul>
       {error && <p>{error.message}</p>}
     </PageWrapper>
@@ -70,7 +78,11 @@ const SelectTopicPage = () => {
 
 const StyledListItem = styled.li`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin: 8px 0;
 `;
 
 export default SelectTopicPage;
