@@ -42,7 +42,7 @@ const SelectTopicPage = () => {
           </Button>
         </>
       )}
-      {!messages.length && !isLoading && (
+      {!messages.length && (
         <form onSubmit={handleSubmit}>
           <Button htmlType="submit" loading={isLoading}>
             {'Prompt'}
