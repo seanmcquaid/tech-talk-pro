@@ -32,17 +32,16 @@ const SelectTopicPage = () => {
           'Based on your selections from earlier, here are some tech talk topics, Click the button below to see!'
         }
       </Typography.Paragraph>
-      {!!messages.length && !isLoading && (
+      {!!messages.length && !isLoading ? (
         <>
           <Typography.Paragraph>
             {'Unhappy with the results? Try again!'}
           </Typography.Paragraph>
-          <Button onClick={() => reload()} loading={isLoading}>
+          <Button onClick={reload} loading={isLoading}>
             {'Reload'}
           </Button>
         </>
-      )}
-      {!messages.length && (
+      ) : (
         <form onSubmit={handleSubmit}>
           <Button htmlType="submit" loading={isLoading}>
             {'Prompt'}
