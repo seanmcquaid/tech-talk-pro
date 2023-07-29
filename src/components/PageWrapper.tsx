@@ -8,17 +8,8 @@ interface PageWrapperProps extends PropsWithChildren {
 }
 
 const PageWrapper = ({ children, isCentered = false }: PageWrapperProps) => {
-  return (
-    <StyledLayout>
-      <StyledContent $isCentered={isCentered}>{children}</StyledContent>
-    </StyledLayout>
-  );
+  return <StyledContent $isCentered={isCentered}>{children}</StyledContent>;
 };
-
-const StyledLayout = styled(Layout)`
-  height: 100%;
-  width: 100%;
-`;
 
 const StyledContent = styled(Layout.Content)<{ $isCentered: boolean }>`
   padding: 16px;

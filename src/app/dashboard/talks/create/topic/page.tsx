@@ -9,8 +9,10 @@ import { setTopic } from '@/store/talk/slice';
 import { useRouter } from 'next/navigation';
 import { useAppDispatch } from '@/store';
 import LoadingSpinner from '@/components/LoadingSpinner';
+import useAppTranslation from '@/hooks/useAppTranslation';
 
 const SelectTopicPage = () => {
+  const { t } = useAppTranslation();
   const talkCategory = useSelector(selectTalkCategory);
   const dispatch = useAppDispatch();
   const { messages, handleSubmit, reload, isLoading, error } = useChat({
@@ -26,54 +28,57 @@ const SelectTopicPage = () => {
 
   return (
     <PageWrapper>
-      <Typography.Title>{'Time to figure out your topic!'}</Typography.Title>
+      <Typography.Title>{t('SelectTopicPage.title')}</Typography.Title>
       <Typography.Paragraph>
-        {
-          'Based on your selections from earlier, here are some tech talk topics, Click the button below to see!'
-        }
+        {t('SelectTopicPage.subtitle')}
       </Typography.Paragraph>
       {!!messages.length && !isLoading ? (
         <>
           <Typography.Paragraph>
-            {'Unhappy with the results? Try again!'}
+            {t('SelectTopicPage.tryAgain')}
           </Typography.Paragraph>
           <Button onClick={() => reload()} loading={isLoading}>
-            {'Reload'}
+            {t('SelectTopicPage.reload')}
           </Button>
         </>
       ) : (
         <form onSubmit={handleSubmit}>
           <Button htmlType="submit" loading={isLoading}>
-            {'Prompt'}
+            {t('SelectTopicPage.load')}
           </Button>
         </form>
       )}
-      <ul>
-        {isLoading ? (
-          <LoadingSpinner />
-        ) : (
-          messages
+      {isLoading ? (
+        <LoadingSpinner />
+      ) : (
+        <StyledList>
+          {messages
             .filter(message => message.role !== 'user')
             .map((m, index) => (
               <StyledListItem key={index}>
-                <ul>
+                <StyledList>
                   {m.content.split('\n').map(str => (
                     <StyledListItem key={str}>
-                      <span>{str}</span>
+                      <StyledSpan>{str}</StyledSpan>
                       <Button onClick={() => handleSelectTopic(str)}>
-                        {'Select this topic'}
+                        {t('SelectTopicPage.selectThisTopic')}
                       </Button>
                     </StyledListItem>
                   ))}
-                </ul>
+                </StyledList>
               </StyledListItem>
-            ))
-        )}
-      </ul>
-      {error && <p>{error.message}</p>}
+            ))}
+        </StyledList>
+      )}
+      {error && <Typography.Paragraph>{error.message}</Typography.Paragraph>}
     </PageWrapper>
   );
 };
+
+const StyledList = styled.ul`
+  margin-left: 0;
+  padding-left: 0;
+`;
 
 const StyledListItem = styled.li`
   display: flex;
@@ -82,6 +87,10 @@ const StyledListItem = styled.li`
   justify-content: space-between;
   align-items: center;
   margin: 8px 0;
+`;
+
+const StyledSpan = styled.span`
+  margin-right: 8px;
 `;
 
 export default SelectTopicPage;

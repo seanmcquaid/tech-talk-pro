@@ -41,7 +41,6 @@ const DashboardLayout = ({ children }: PropsWithChildren) => {
       <StyledLayout>
         <Header style={{ padding: 0, background: colorBgLayout }} />
         <PageWrapper>{children}</PageWrapper>
-        <Footer />
       </StyledLayout>
     </StyledLayout>
   );
@@ -50,6 +49,7 @@ const DashboardLayout = ({ children }: PropsWithChildren) => {
 const StyledLayout = styled(Layout)`
   height: 100%;
   width: 100%;
+  overflow-y: scroll;
 `;
 
 const UserButtonWrapper = styled.div`

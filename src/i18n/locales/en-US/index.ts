@@ -26,6 +26,15 @@ const enUSLocale = {
     goHome: 'Go Home',
     title: 'Page Not Found',
   },
+  SelectTopicPage: {
+    load: 'Load Topics',
+    reload: 'Reload',
+    selectThisTopic: 'Select This Topic',
+    subtitle:
+      'Based on your selections from earlier, we are going to generate some topic options for you. Click the button below to see!',
+    title: 'Time to figure out your topic!',
+    tryAgain: 'Unhappy with the results? Try again!',
+  },
   TalksPage: {
     createNewTalk: 'Create New Talk',
     createNewTalkInfo:
