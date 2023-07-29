@@ -21,7 +21,6 @@ const ConfigurePage = () => {
   const { t } = useAppTranslation();
   const talkLength = useSelector(selectTalkLength);
   const talkCategory = useSelector(selectTalkCategory);
-  console.log(talkCategory);
   const { control, handleSubmit } = useForm<z.infer<typeof formSchema>>({
     defaultValues: {
       talkCategory,
