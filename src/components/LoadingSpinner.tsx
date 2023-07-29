@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 const LoadingSpinner = () => {
   return (
-    <LoadingSpinnerWrapper>
+    <LoadingSpinnerWrapper data-testid="loading-spinner">
       <Spin size="large" />
     </LoadingSpinnerWrapper>
   );

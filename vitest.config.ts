@@ -6,6 +6,7 @@ import * as path from 'path';
 export default defineConfig({
   plugins: [react()],
   test: {
+    mockReset: true,
     environment: 'jsdom',
     globals: true,
     setupFiles: ['./src/setupTests.ts'],

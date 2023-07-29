@@ -51,7 +51,7 @@ const SelectTopicPage = () => {
       {isLoading ? (
         <LoadingSpinner />
       ) : (
-        <StyledList>
+        <StyledList data-testid="topics-list">
           {messages
             .filter(message => message.role !== 'user')
             .map((m, index) => (

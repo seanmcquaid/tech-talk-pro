@@ -7,7 +7,7 @@ import { useRouter } from 'next/navigation';
 import type { PropsWithChildren } from 'react';
 import styled from 'styled-components';
 
-const { Header, Footer, Sider } = Layout;
+const { Header, Sider } = Layout;
 
 const DashboardLayout = ({ children }: PropsWithChildren) => {
   const {
