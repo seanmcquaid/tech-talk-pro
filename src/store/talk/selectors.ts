@@ -8,7 +8,7 @@ export const selectTalkLength = createSelector(
   state => state.talkLength,
 );
 
-export const selectTopic = createSelector(
+export const selectTalkCategory = createSelector(
   selectTalkState,
-  state => state.topic,
+  state => state.talkCategory,
 );

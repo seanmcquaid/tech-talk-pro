@@ -24,6 +24,7 @@ runs:
         echo "NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=/" >> .env
         echo "DATABASE_URL=fake-url" >> .env
         echo "NEXT_PUBLIC_FLAGS_ENV_KEY=fake-key" >> .env
+        echo "OPEN_AI_API_KEY=fake-key" >> .env
     - name: Install Dependencies
       shell: bash
       run: pnpm install --frozen-lockfile

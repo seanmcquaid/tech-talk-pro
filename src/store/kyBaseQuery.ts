@@ -19,6 +19,7 @@ const kyBaseQuery =
     try {
       const apiClient = createApiClient(baseUrl);
       const result = await apiClient(url, {
+        method: rest.method ?? 'get',
         ...rest,
       });
       return { data: await result.json() };
@@ -27,8 +28,8 @@ const kyBaseQuery =
 
       return {
         error: {
-          status: httpError.response.status,
-          data: httpError.responseData,
+          status: httpError.response?.status,
+          data: httpError?.responseData,
         },
       };
     }

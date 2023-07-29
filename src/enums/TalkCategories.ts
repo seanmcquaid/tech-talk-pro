@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-const topicOptions = [
+const talkCategoiesOptions = [
   'Artificial Intelligence',
   'Blockchain',
   'Cloud Computing',
@@ -21,6 +21,6 @@ const topicOptions = [
   'Leadership',
 ] as const;
 
-const Topics = z.enum(topicOptions);
+const TalkCategories = z.enum(talkCategoiesOptions);
 
-export default Topics;
+export default TalkCategories;

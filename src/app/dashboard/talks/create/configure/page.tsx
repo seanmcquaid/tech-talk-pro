@@ -3,36 +3,37 @@ import PageWrapper from '@/components/PageWrapper';
 import { Button, Select, Typography } from 'antd';
 import { z } from 'zod';
 import { Controller, useForm } from 'react-hook-form';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { setTalkLength, setTopic } from '@/store/talk/slice';
 import { useRouter } from 'next/navigation';
-import { selectTalkLength, selectTopic } from '@/store/talk/selectors';
-import Topics from '@/enums/Topics';
+import { selectTalkCategory, selectTalkLength } from '@/store/talk/selectors';
 import TalkLengths from '@/enums/TalkLengths';
 import useAppTranslation from '@/hooks/useAppTranslation';
+import TalkCategories from '@/enums/TalkCategories';
+import { useAppDispatch } from '@/store';
 
 const formSchema = z.object({
-  topic: Topics,
+  talkCategory: TalkCategories,
   talkLength: TalkLengths,
 });
 
 const ConfigurePage = () => {
   const { t } = useAppTranslation();
   const talkLength = useSelector(selectTalkLength);
-  const topic = useSelector(selectTopic);
+  const talkCategory = useSelector(selectTalkCategory);
   const { control, handleSubmit } = useForm<z.infer<typeof formSchema>>({
     defaultValues: {
-      topic,
+      talkCategory,
       talkLength,
     },
   });
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const router = useRouter();
 
   const onSubmit = handleSubmit(value => {
     dispatch(setTalkLength(value.talkLength));
-    dispatch(setTopic(value.topic));
-    router.push('/dashboard/talks/create/title');
+    dispatch(setTopic(value.talkCategory));
+    router.push('/dashboard/talks/create/topic');
   });
 
   return (
@@ -41,13 +42,12 @@ const ConfigurePage = () => {
       <Typography.Paragraph>{t('ConfigurePage.subtitle')}</Typography.Paragraph>
       <form onSubmit={onSubmit}>
         <Controller
-          name="topic"
+          name="talkCategory"
           control={control}
           render={({ field }) => (
             <Select
-              onChange={field.onChange}
-              value={field.value}
-              options={Topics.options.map(option => ({
+              {...field}
+              options={TalkCategories.options.map(option => ({
                 title: option,
                 value: option,
               }))}
@@ -59,8 +59,7 @@ const ConfigurePage = () => {
           control={control}
           render={({ field }) => (
             <Select
-              onChange={field.onChange}
-              value={field.value}
+              {...field}
               options={Object.values(TalkLengths.enum).map(option => ({
                 title: t('ConfigurePage.minutes', { numberOfMinutes: option }),
                 value: option,

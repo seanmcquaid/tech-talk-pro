@@ -132,6 +132,7 @@ describe('/talks/[id]', () => {
             talkLength: 30,
             topic: 'Test topic',
             abstract: 'Test abstract',
+            category: 'Test category',
           }),
         } as NextRequest,
         {
