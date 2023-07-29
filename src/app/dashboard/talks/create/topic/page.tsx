@@ -37,7 +37,7 @@ const SelectTopicPage = () => {
           <Typography.Paragraph>
             {'Unhappy with the results? Try again!'}
           </Typography.Paragraph>
-          <Button onClick={reload} loading={isLoading}>
+          <Button onClick={() => reload()} loading={isLoading}>
             {'Reload'}
           </Button>
         </>
