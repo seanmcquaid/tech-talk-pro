@@ -8,12 +8,14 @@ export interface TalkState {
   talkCategory: z.infer<typeof TalkCategories>;
   talkLength: z.infer<typeof TalkLengths>;
   topic: string;
+  abstract: string;
 }
 
 const initialState: TalkState = {
   talkCategory: 'Software Engineering',
   talkLength: 30,
   topic: '',
+  abstract: '',
 };
 
 export const talkSlice = createSlice({
@@ -35,9 +37,12 @@ export const talkSlice = createSlice({
     ) => {
       state.talkLength = action.payload;
     },
+    setAbstract: (state, action: PayloadAction<string>) => {
+      state.abstract = action.payload;
+    },
   },
 });
 
-export const { setTalkLength, setTopic } = talkSlice.actions;
+export const { setTalkLength, setTopic, setAbstract } = talkSlice.actions;
 
 export default talkSlice;
