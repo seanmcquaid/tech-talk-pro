@@ -1,6 +1,6 @@
 'use client';
-import NavigationCard from '@/components/NavigationCard';
-import PageWrapper from '@/components/PageWrapper';
+import NavigationCard from '@/components/ui/NavigationCard';
+import PageWrapper from '@/components/ui/PageWrapper';
 import useAppTranslation from '@/hooks/useAppTranslation';
 import { Typography } from 'antd';
 

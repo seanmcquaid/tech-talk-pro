@@ -1,4 +1,4 @@
-import PageWrapper from '@/components/PageWrapper';
+import PageWrapper from '@/components/ui/PageWrapper';
 import { SignUp } from '@clerk/nextjs';
 
 const SignUpPage = () => {

@@ -1,5 +1,5 @@
 'use client';
-import PageWrapper from '@/components/PageWrapper';
+import PageWrapper from '@/components/ui/PageWrapper';
 import useAppTranslation from '@/hooks/useAppTranslation';
 import { UserButton, useSession } from '@clerk/nextjs';
 import { Button, Layout, Typography } from 'antd';

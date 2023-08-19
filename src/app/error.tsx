@@ -1,6 +1,6 @@
 'use client'; // Error components must be Client Components
 
-import ErrorPage from '@/components/ErrorPage';
+import ErrorPage from '@/components/ui/ErrorPage';
 
 interface ErrorProps {
   error: Error;

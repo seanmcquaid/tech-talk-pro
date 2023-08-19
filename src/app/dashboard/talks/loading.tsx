@@ -1,5 +1,5 @@
-import LoadingSpinner from '@/components/LoadingSpinner';
-import PageWrapper from '@/components/PageWrapper';
+import LoadingSpinner from '@/components/ui/LoadingSpinner';
+import PageWrapper from '@/components/ui/PageWrapper';
 
 const Loading = () => (
   <PageWrapper>

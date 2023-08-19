@@ -1,14 +1,14 @@
 'use client';
-import PageWrapper from '@/components/PageWrapper';
+import PageWrapper from '@/components/ui/PageWrapper';
 import { Button, Select, Typography } from 'antd';
 import { z } from 'zod';
 import { Controller, useForm } from 'react-hook-form';
 import { setTalkLength, setTopic } from '@/store/talk/slice';
 import { useRouter } from 'next/navigation';
 import { selectTalkCategory, selectTalkLength } from '@/store/talk/selectors';
-import TalkLengths from '@/enums/TalkLengths';
+import TalkLengths from '@/constants/TalkLengths';
 import useAppTranslation from '@/hooks/useAppTranslation';
-import TalkCategories from '@/enums/TalkCategories';
+import TalkCategories from '@/constants/TalkCategories';
 import { useAppDispatch, useAppSelector } from '@/store';
 
 const formSchema = z.object({

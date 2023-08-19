@@ -1,5 +1,5 @@
 'use client';
-import PageWrapper from '@/components/PageWrapper';
+import PageWrapper from '@/components/ui/PageWrapper';
 import { Typography, Button } from 'antd';
 import { useChat } from 'ai/react';
 import { selectTalkCategory } from '@/store/talk/selectors';
@@ -7,7 +7,7 @@ import styled from 'styled-components';
 import { setTopic } from '@/store/talk/slice';
 import { useRouter } from 'next/navigation';
 import { useAppDispatch, useAppSelector } from '@/store';
-import LoadingSpinner from '@/components/LoadingSpinner';
+import LoadingSpinner from '@/components/ui/LoadingSpinner';
 import useAppTranslation from '@/hooks/useAppTranslation';
 
 const SelectTopicPage = () => {

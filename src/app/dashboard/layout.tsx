@@ -1,5 +1,5 @@
 'use client';
-import PageWrapper from '@/components/PageWrapper';
+import PageWrapper from '@/components/ui/PageWrapper';
 import { DesktopOutlined } from '@ant-design/icons';
 import { UserButton } from '@clerk/nextjs';
 import { Layout, theme, Menu } from 'antd';

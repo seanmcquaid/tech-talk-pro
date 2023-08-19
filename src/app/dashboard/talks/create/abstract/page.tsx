@@ -1,7 +1,7 @@
 'use client';
 
-import LoadingSpinner from '@/components/LoadingSpinner';
-import PageWrapper from '@/components/PageWrapper';
+import LoadingSpinner from '@/components/ui/LoadingSpinner';
+import PageWrapper from '@/components/ui/PageWrapper';
 import useAppTranslation from '@/hooks/useAppTranslation';
 import { useAppDispatch, useAppSelector } from '@/store';
 import { selectTopic } from '@/store/talk/selectors';

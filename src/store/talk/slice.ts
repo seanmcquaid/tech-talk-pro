@@ -1,8 +1,8 @@
-import type TalkLengths from '@/enums/TalkLengths';
+import type TalkLengths from '@/constants/TalkLengths';
 import type { PayloadAction } from '@reduxjs/toolkit';
 import { createSlice } from '@reduxjs/toolkit';
 import type { z } from 'zod';
-import type TalkCategories from '@/enums/TalkCategories';
+import type TalkCategories from '@/constants/TalkCategories';
 
 export interface TalkState {
   talkCategory: z.infer<typeof TalkCategories>;

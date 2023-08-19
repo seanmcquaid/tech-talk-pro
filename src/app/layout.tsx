@@ -2,7 +2,7 @@ import { Analytics } from '@vercel/analytics/react';
 import { ClerkProvider } from '@clerk/nextjs';
 import StyledComponentsRegistry from '@/styles/StyledComponentsRegistry';
 import ReduxProvider from '@/store/ReduxProvider';
-import InitializeApp from '@/components/InitializeApp';
+import InitializeApp from '@/components/app/InitializeApp';
 import '@/i18n/client';
 import 'antd/dist/reset.css';
 import type { PropsWithChildren } from 'react';
