@@ -3,17 +3,16 @@ import PageWrapper from '@/components/PageWrapper';
 import { Typography, Button } from 'antd';
 import { useChat } from 'ai/react';
 import { selectTalkCategory } from '@/store/talk/selectors';
-import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 import { setTopic } from '@/store/talk/slice';
 import { useRouter } from 'next/navigation';
-import { useAppDispatch } from '@/store';
+import { useAppDispatch, useAppSelector } from '@/store';
 import LoadingSpinner from '@/components/LoadingSpinner';
 import useAppTranslation from '@/hooks/useAppTranslation';
 
 const SelectTopicPage = () => {
   const { t } = useAppTranslation();
-  const talkCategory = useSelector(selectTalkCategory);
+  const talkCategory = useAppSelector(selectTalkCategory);
   const dispatch = useAppDispatch();
   const { messages, handleSubmit, reload, isLoading, error } = useChat({
     api: '/api/prompt',
