@@ -33,8 +33,8 @@ dependencies:
     specifier: ^2.1.34
     version: 2.1.34(react@18.2.0)(solid-js@1.7.8)(svelte@4.0.5)(vue@3.3.4)
   antd:
-    specifier: ^5.8.2
-    version: 5.8.2(react-dom@18.2.0)(react@18.2.0)
+    specifier: ^5.8.3
+    version: 5.8.3(react-dom@18.2.0)(react@18.2.0)
   i18next:
     specifier: ^23.4.4
     version: 23.4.4
@@ -3251,8 +3251,8 @@ packages:
     engines: {node: '>=12'}
     dev: true
 
-  /antd@5.8.2(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-kkC2BSBde1JzJxk2wNYj/NXgNZQZ2yu6avJoCKleSi32nsjiadi7FFu1AyGxIzoJ9CrxoLacjGvrwbKJQ6kCvw==}
+  /antd@5.8.3(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-/DIGg/1UXyPdNLs9FYalfJO1LnnwMv2pnx9DS6ANSJwlo6fDxtb693IJWdaBuRlxgXJfARzxMNsPyFygy9N/Qw==}
     peerDependencies:
       react: '>=16.9.0'
       react-dom: '>=16.9.0'
@@ -3286,7 +3286,7 @@ packages:
       rc-motion: 2.7.3(react-dom@18.2.0)(react@18.2.0)
       rc-notification: 5.0.4(react-dom@18.2.0)(react@18.2.0)
       rc-pagination: 3.5.0(react-dom@18.2.0)(react@18.2.0)
-      rc-picker: 3.12.0(dayjs@1.11.8)(react-dom@18.2.0)(react@18.2.0)
+      rc-picker: 3.13.0(dayjs@1.11.8)(react-dom@18.2.0)(react@18.2.0)
       rc-progress: 3.4.2(react-dom@18.2.0)(react@18.2.0)
       rc-rate: 2.12.0(react-dom@18.2.0)(react@18.2.0)
       rc-resize-observer: 1.3.1(react-dom@18.2.0)(react@18.2.0)
@@ -6338,8 +6338,8 @@ packages:
       react-dom: 18.2.0(react@18.2.0)
     dev: false
 
-  /rc-picker@3.12.0(dayjs@1.11.8)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-SsEhK4hbjAh3pvlqujIQaMcx6mLAwc0KN0TS9dJ0rtwGuUnSDa/mKgna/LjZlOT7U//b+dIH5BLSZttpklRG9A==}
+  /rc-picker@3.13.0(dayjs@1.11.8)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-hJ+1lGkemnvsW+t+PjH9OAehHlj7wdD0G75T1HZj0IeZTqBE/5mmuf8E8MHYATNBqW409lAfk8GwjYm1WVMopg==}
     engines: {node: '>=8.x'}
     peerDependencies:
       date-fns: '>= 2.x'
