@@ -57,7 +57,7 @@ const CreateAbstractPage = () => {
       {isLoading ? (
         <LoadingSpinner />
       ) : (
-        <ul data-testid="topics-list">
+        <ul data-testid="abstract">
           {filteredMessages.map((m, index) => (
             <li key={index}>{m.content}</li>
           ))}
