@@ -20,6 +20,15 @@ const enUSLocale = {
     title: 'Create Abstract',
     tryAgain: 'Unhappy with the results? Try again!',
   },
+  CreateSlidesPage: {
+    goToNextPage: 'Happy with the slides? Go to the next page!',
+    load: 'Load',
+    reload: 'Reload',
+    subtitle:
+      "Now that you have all of the content you will need, let's create some slides!",
+    title: 'Create Slides',
+    tryAgain: 'Unhappy with the results? Try again!',
+  },
   DashboardPage: {
     talksCardInfo: 'Check out your current talks or create a new one here!',
     talksCardTitle: 'Talks',
