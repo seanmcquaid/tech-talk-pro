@@ -17,3 +17,8 @@ export const selectTopic = createSelector(
   selectTalkState,
   state => state.topic,
 );
+
+export const selectAbstract = createSelector(
+  selectTalkState,
+  state => state.abstract,
+);
