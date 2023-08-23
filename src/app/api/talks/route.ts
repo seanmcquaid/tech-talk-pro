@@ -25,11 +25,10 @@ export async function POST(request: NextRequest) {
   try {
     const { userId } = auth();
     const body = await request.json();
-    const { title, talkLength, abstract, topic, category } =
+    const { talkLength, abstract, topic, category } =
       createTalkBodySchema.parse(body);
     const talk = await db.talk.create({
       data: {
-        title,
         userId: userId!,
         talkLength,
         abstract,

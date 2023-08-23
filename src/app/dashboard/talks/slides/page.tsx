@@ -3,85 +3,93 @@
 import LoadingSpinner from '@/components/ui/LoadingSpinner';
 import PageWrapper from '@/components/ui/PageWrapper';
 import useAppTranslation from '@/hooks/useAppTranslation';
-import { useAppDispatch, useAppSelector } from '@/store';
+import { useAppSelector } from '@/store';
 import {
+  selectAbstract,
   selectTalkCategory,
   selectTalkLength,
   selectTopic,
 } from '@/store/talk/selectors';
-import { setAbstract } from '@/store/talk/slice';
-import { useCreateTalkMutation } from '@/store/talksApi';
 import { useChat } from 'ai/react';
 import { Button, Typography } from 'antd';
 import { useRouter } from 'next/navigation';
+import { styled } from 'styled-components';
 
-const CreateAbstractPage = () => {
+const CreateSlidesPage = () => {
   const { t } = useAppTranslation();
-  const dispatch = useAppDispatch();
-  const topic = useAppSelector(selectTopic);
   const talkLength = useAppSelector(selectTalkLength);
-  const category = useAppSelector(selectTalkCategory);
+  const talkCategory = useAppSelector(selectTalkCategory);
+  const topic = useAppSelector(selectTopic);
+  const abstract = useAppSelector(selectAbstract);
   const { messages, handleSubmit, reload, isLoading, error } = useChat({
     api: '/api/prompt',
-    initialInput: `Give me a one paragraph abstract for a talk on ${topic}`,
+    initialInput: `Give me a list of slides and four bullet points for each slide for a technical talk on ${topic} that is ${talkLength} minutes long and is in the ${talkCategory} category. The abstract is ${abstract}`,
   });
   const filteredMessages = messages.filter(message => message.role !== 'user');
   const router = useRouter();
-  const [createTalk, { isLoading: createTalkLoading }] =
-    useCreateTalkMutation();
 
   const handleGoToNextPage = () => {
-    const abstract = filteredMessages[0];
-    dispatch(setAbstract(abstract.content));
-    createTalk({
-      abstract: abstract.content,
-      talkLength,
-      topic,
-      category,
-    }).then(() => {
-      router.push('/dashboard/talks');
-    });
+    router.push('/');
   };
 
   return (
     <PageWrapper>
-      <Typography.Title>{t('CreateAbstractPage.title')}</Typography.Title>
+      <Typography.Title>{t('CreateSlidesPage.title')}</Typography.Title>
       <Typography.Paragraph>
-        {t('CreateAbstractPage.subtitle')}
+        {t('CreateSlidesPage.subtitle')}
       </Typography.Paragraph>
       {!!messages.length && !isLoading && (
-        <Button onClick={handleGoToNextPage} loading={createTalkLoading}>
-          {t('CreateAbstractPage.goToNextPage')}
+        <Button onClick={handleGoToNextPage}>
+          {t('CreateSlidesPage.goToNextPage')}
         </Button>
       )}
       {!!messages.length && !isLoading ? (
         <>
           <Typography.Paragraph>
-            {t('CreateAbstractPage.tryAgain')}
+            {t('CreateSlidesPage.tryAgain')}
           </Typography.Paragraph>
           <Button onClick={() => reload()} loading={isLoading}>
-            {t('CreateAbstractPage.reload')}
+            {t('CreateSlidesPage.reload')}
           </Button>
         </>
       ) : (
         <form onSubmit={handleSubmit}>
           <Button htmlType="submit" loading={isLoading}>
-            {t('CreateAbstractPage.load')}
+            {t('CreateSlidesPage.load')}
           </Button>
         </form>
       )}
       {isLoading ? (
         <LoadingSpinner />
       ) : (
-        <ul data-testid="abstract">
+        <UnstyledList data-testid="abstract">
           {filteredMessages.map((m, index) => (
-            <li key={index}>{m.content}</li>
+            <UnstyledListItem key={index}>
+              <UnstyledList>
+                {m.content.split('\n').map((str, index2) => (
+                  <UnstyledListItem key={index + index2}>
+                    {str}
+                  </UnstyledListItem>
+                ))}
+              </UnstyledList>
+            </UnstyledListItem>
           ))}
-        </ul>
+        </UnstyledList>
       )}
       {error && <Typography.Paragraph>{error.message}</Typography.Paragraph>}
     </PageWrapper>
   );
 };
 
-export default CreateAbstractPage;
+const UnstyledList = styled.ul`
+  list-style: none;
+  padding: 0;
+  margin: 0;
+`;
+
+const UnstyledListItem = styled.li`
+  margin: 0;
+  padding: 0;
+`;
+
+export default CreateSlidesPage;

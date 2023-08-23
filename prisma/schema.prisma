@@ -23,7 +23,6 @@ model Slide {
 
 model Talk {
   id        String      @id @default(uuid())
-  title     String
   talkLength Int
   createdAt DateTime @default(now())
   abstract  String
