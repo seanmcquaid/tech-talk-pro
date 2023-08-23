@@ -9,6 +9,8 @@ const TalksPage = () => {
   const { t } = useAppTranslation();
   const { data } = useGetTalksQuery();
 
+  console.log(data);
+
   return (
     <PageWrapper>
       <Typography.Title>{t('TalksPage.title')}</Typography.Title>
@@ -19,7 +21,7 @@ const TalksPage = () => {
       />
       {data?.map(talk => (
         <NavigationCard
-          title={talk.title}
+          title={talk.topic}
           text={talk.topic}
           route={`/dashboard/talks/${talk.id}`}
           key={talk.id}

@@ -4,8 +4,13 @@ import LoadingSpinner from '@/components/ui/LoadingSpinner';
 import PageWrapper from '@/components/ui/PageWrapper';
 import useAppTranslation from '@/hooks/useAppTranslation';
 import { useAppDispatch, useAppSelector } from '@/store';
-import { selectTopic } from '@/store/talk/selectors';
+import {
+  selectTalkCategory,
+  selectTalkLength,
+  selectTopic,
+} from '@/store/talk/selectors';
 import { setAbstract } from '@/store/talk/slice';
+import { useCreateTalkMutation } from '@/store/talksApi';
 import { useChat } from 'ai/react';
 import { Button, Typography } from 'antd';
 import { useRouter } from 'next/navigation';
@@ -14,17 +19,28 @@ const CreateAbstractPage = () => {
   const { t } = useAppTranslation();
   const dispatch = useAppDispatch();
   const topic = useAppSelector(selectTopic);
+  const talkLength = useAppSelector(selectTalkLength);
+  const category = useAppSelector(selectTalkCategory);
   const { messages, handleSubmit, reload, isLoading, error } = useChat({
     api: '/api/prompt',
     initialInput: `Give me a one paragraph abstract for a talk on ${topic}`,
   });
   const filteredMessages = messages.filter(message => message.role !== 'user');
   const router = useRouter();
+  const [createTalk, { isLoading: createTalkLoading }] =
+    useCreateTalkMutation();
 
   const handleGoToNextPage = () => {
     const abstract = filteredMessages[0];
     dispatch(setAbstract(abstract.content));
-    router.push('/dashboard/talks/create/slides');
+    createTalk({
+      abstract: abstract.content,
+      talkLength,
+      topic,
+      category,
+    }).then(() => {
+      router.push('/dashboard/talks');
+    });
   };
 
   return (
@@ -34,7 +50,7 @@ const CreateAbstractPage = () => {
         {t('CreateAbstractPage.subtitle')}
       </Typography.Paragraph>
       {!!messages.length && !isLoading && (
-        <Button onClick={handleGoToNextPage}>
+        <Button onClick={handleGoToNextPage} loading={createTalkLoading}>
           {t('CreateAbstractPage.goToNextPage')}
         </Button>
       )}
