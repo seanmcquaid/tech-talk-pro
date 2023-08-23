@@ -11,6 +11,9 @@ const talksApi = createApi({
     getTalks: builder.query<Talk[], void>({
       query: () => ({ url: 'talks' }),
     }),
+    createTalk: builder.mutation<Talk, void>({
+      query: () => ({ url: 'talks', method: 'POST' }),
+    }),
   }),
 });
 
