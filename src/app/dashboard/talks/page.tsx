@@ -1,4 +1,5 @@
 'use client';
+import LoadingSpinner from '@/components/ui/LoadingSpinner';
 import NavigationCard from '@/components/ui/NavigationCard';
 import PageWrapper from '@/components/ui/PageWrapper';
 import useAppTranslation from '@/hooks/useAppTranslation';
@@ -7,9 +8,7 @@ import { Typography } from 'antd';
 
 const TalksPage = () => {
   const { t } = useAppTranslation();
-  const { data } = useGetTalksQuery();
-
-  console.log(data);
+  const { data, isLoading } = useGetTalksQuery();
 
   return (
     <PageWrapper>
@@ -19,10 +18,10 @@ const TalksPage = () => {
         route="/dashboard/talks/create/configure"
         text={t('TalksPage.createNewTalkInfo')}
       />
+      {isLoading && <LoadingSpinner />}
       {data?.map(talk => (
         <NavigationCard
           title={talk.topic}
-          text={talk.topic}
           route={`/dashboard/talks/${talk.id}`}
           key={talk.id}
         />
