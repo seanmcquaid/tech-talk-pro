@@ -14,6 +14,7 @@ import { useCreateTalkMutation } from '@/store/talksApi';
 import { useChat } from 'ai/react';
 import { Button, Typography } from 'antd';
 import { useRouter } from 'next/navigation';
+import { toast } from 'react-hot-toast';
 
 const CreateAbstractPage = () => {
   const { t } = useAppTranslation();
@@ -35,12 +36,18 @@ const CreateAbstractPage = () => {
     dispatch(setAbstract(abstract.content));
     createTalk({
       abstract: abstract.content,
-      talkLength,
       topic,
       category,
-    }).then(() => {
-      router.push('/dashboard/talks');
-    });
+      talkLength,
+    })
+      .unwrap()
+      .then(() => {
+        router.push('/dashboard/talks');
+        toast('Talk created successfully');
+      })
+      .catch(() => {
+        toast('Something went wrong creating your talk, try again!');
+      });
   };
 
   return (

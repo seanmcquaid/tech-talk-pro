@@ -6,14 +6,14 @@ import styled from 'styled-components';
 interface NavigationCardProps {
   title: string;
   route: string;
-  text: string;
+  text?: string;
 }
 
 const NavigationCard = ({ title, route, text }: NavigationCardProps) => {
   const router = useRouter();
   return (
     <StyledCard title={title} size="default" onClick={() => router.push(route)}>
-      <Typography.Paragraph>{text}</Typography.Paragraph>
+      {text && <Typography.Paragraph>{text}</Typography.Paragraph>}
     </StyledCard>
   );
 };

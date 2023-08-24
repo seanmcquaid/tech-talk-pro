@@ -9,6 +9,7 @@ import type { PropsWithChildren } from 'react';
 import '@/env.client';
 import '@/env.server';
 import AppThemeProvider from '@/styles/AppThemeProvider';
+import { Toaster } from 'react-hot-toast';
 
 export const metadata = {
   title: 'Tech Talk Pro',
@@ -26,6 +27,7 @@ const RootLayout = ({ children }: PropsWithChildren) => {
               <ReduxProvider>
                 <InitializeApp>{children}</InitializeApp>
               </ReduxProvider>
+              <Toaster position="bottom-center" reverseOrder={false} />
             </body>
           </html>
         </AppThemeProvider>
