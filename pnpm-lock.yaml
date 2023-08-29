@@ -30,8 +30,8 @@ dependencies:
     specifier: ^1.0.2
     version: 1.0.2
   ai:
-    specifier: ^2.2.7
-    version: 2.2.7(react@18.2.0)(solid-js@1.7.8)(svelte@4.0.5)(vue@3.3.4)
+    specifier: ^2.2.10
+    version: 2.2.10(react@18.2.0)(solid-js@1.7.8)(svelte@4.0.5)(vue@3.3.4)
   antd:
     specifier: ^5.8.5
     version: 5.8.5(react-dom@18.2.0)(react@18.2.0)
@@ -3154,8 +3154,8 @@ packages:
       humanize-ms: 1.2.1
     dev: false
 
-  /ai@2.2.7(react@18.2.0)(solid-js@1.7.8)(svelte@4.0.5)(vue@3.3.4):
-    resolution: {integrity: sha512-rURQDSFhVHg7obYZ94+yMTg1322j9DhbCIJt4cHFRtTPLLsvQJFTx//B4DhsOHvBZQVSyggSy1CAQPccaFYzhw==}
+  /ai@2.2.10(react@18.2.0)(solid-js@1.7.8)(svelte@4.0.5)(vue@3.3.4):
+    resolution: {integrity: sha512-3FARCB9X57YxpAJeAUvZHTeeQ549B/kTMQk5Qet1rZNm9EjKXeHUiQfaq+L8v9f75HYasZXJIl//owzdjojTTw==}
     engines: {node: '>=14.6'}
     peerDependencies:
       react: ^18.2.0
@@ -3174,7 +3174,7 @@ packages:
     dependencies:
       eventsource-parser: 1.0.0
       nanoid: 3.3.6
-      openai: 4.0.0
+      openai: 4.2.0
       react: 18.2.0
       solid-js: 1.7.8
       solid-swr-store: 0.10.7(solid-js@1.7.8)(swr-store@0.10.6)
@@ -5807,8 +5807,8 @@ packages:
     engines: {node: '>=18'}
     dev: false
 
-  /openai@4.0.0:
-    resolution: {integrity: sha512-UHv70gIw20pxu9tiUueE9iS+4U4eTGiTgQr+zlJ5aX4oj6LUUp+7mBn0xAqilawftwUB/biohPth2vcZFmoNYw==}
+  /openai@4.2.0:
+    resolution: {integrity: sha512-zfvpO2eITIxIjTG8T6Cek7NB2dMvP/LW0TRUJ4P9E8+qbBNKw00DrtfF64b+fAV2+wUYCVyynT6iSycJ//TtbA==}
     hasBin: true
     dependencies:
       '@types/node': 18.17.7
