@@ -8,7 +8,7 @@ interface KyBaseQuery extends Options {
 
 interface KyBaseQueryError {
   status: number;
-  data: unknown;
+  responseData: unknown;
 }
 
 const kyBaseQuery =
@@ -29,7 +29,7 @@ const kyBaseQuery =
       return {
         error: {
           status: httpError.response?.status,
-          data: httpError?.responseData,
+          responseData: httpError?.responseData,
         },
       };
     }
