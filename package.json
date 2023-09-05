@@ -19,7 +19,7 @@
     "test:watch": "vitest --passWithNoTests"
   },
   "dependencies": {
-    "@ant-design/icons": "^5.2.5",
+    "@ant-design/icons": "^5.2.6",
     "@clerk/nextjs": "^4.23.4",
     "@happykit/flags": "^3.3.0",
     "@hookform/resolvers": "^3.3.1",
