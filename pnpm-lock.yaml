@@ -161,8 +161,8 @@ devDependencies:
     specifier: ^0.34.3
     version: 0.34.3(jsdom@22.1.0)
   vitest-mock-extended:
-    specifier: ^1.2.0
-    version: 1.2.0(typescript@5.2.2)(vitest@0.34.3)
+    specifier: ^1.2.1
+    version: 1.2.1(typescript@5.2.2)(vitest@0.34.3)
 
 packages:
 
@@ -7666,8 +7666,8 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /vitest-mock-extended@1.2.0(typescript@5.2.2)(vitest@0.34.3):
-    resolution: {integrity: sha512-/UwFogR1XFvLHmdru+IDbfEywwqKQ8QuaKPEyoWg1ElbZFck/y/jikeOu/EjAVEoYxS9pB/FKFHAidkNBtwEFA==}
+  /vitest-mock-extended@1.2.1(typescript@5.2.2)(vitest@0.34.3):
+    resolution: {integrity: sha512-zRiSAR4d44S0XEWgfhnyYkU9Z2a7bo9FiEoh7Qe9qW/Qm+j0Uq9i8paOONpSDwzOe1fxwff8Au5PS5+uBZ06bw==}
     peerDependencies:
       typescript: 3.x || 4.x || 5.x
       vitest: '>=0.31.1'
