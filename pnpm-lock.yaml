@@ -30,8 +30,8 @@ dependencies:
     specifier: ^1.0.2
     version: 1.0.2
   ai:
-    specifier: ^2.2.11
-    version: 2.2.11(react@18.2.0)(solid-js@1.7.8)(svelte@4.0.5)(vue@3.3.4)
+    specifier: ^2.2.12
+    version: 2.2.12(react@18.2.0)(solid-js@1.7.8)(svelte@4.0.5)(vue@3.3.4)
   antd:
     specifier: ^5.9.0
     version: 5.9.0(react-dom@18.2.0)(react@18.2.0)
@@ -3165,8 +3165,8 @@ packages:
       humanize-ms: 1.2.1
     dev: false
 
-  /ai@2.2.11(react@18.2.0)(solid-js@1.7.8)(svelte@4.0.5)(vue@3.3.4):
-    resolution: {integrity: sha512-thZxrZCfXpOFVR2zSwuZYvTlKZF6H1z9z45VCPgm+VOWHvqUWgINCHWjklCHhCkVV+Abc9w7zelQAN3lcGmrgw==}
+  /ai@2.2.12(react@18.2.0)(solid-js@1.7.8)(svelte@4.0.5)(vue@3.3.4):
+    resolution: {integrity: sha512-UdTbykzU9EvqwLv8KyJD4Avzsi9DYXZlE+6S4jd86iyp56jRJeg9Vmsnc+2487qI20aMIqKkm07R3qqJ1DH6lA==}
     engines: {node: '>=14.6'}
     peerDependencies:
       react: ^18.2.0
