@@ -116,8 +116,8 @@ devDependencies:
     specifier: ^4.0.4
     version: 4.0.4(vite@4.3.9)
   '@vitest/coverage-v8':
-    specifier: ^0.34.3
-    version: 0.34.3(vitest@0.34.4)
+    specifier: ^0.34.4
+    version: 0.34.4(vitest@0.34.4)
   eslint:
     specifier: 8.48.0
     version: 8.48.0
@@ -2651,7 +2651,7 @@ packages:
   /@types/jsdom@21.1.2:
     resolution: {integrity: sha512-bGj+7TaCkOwkJfx7HtS9p22Ij0A2aKMuz8a1+owpkxa1wU/HUBy/WAXhdv90uDdVI9rSjGvUrXmLSeA9VP3JeA==}
     dependencies:
-      '@types/node': 20.5.9
+      '@types/node': 20.6.0
       '@types/tough-cookie': 4.0.2
       parse5: 7.1.2
     dev: false
@@ -2979,8 +2979,8 @@ packages:
       - supports-color
     dev: true
 
-  /@vitest/coverage-v8@0.34.3(vitest@0.34.4):
-    resolution: {integrity: sha512-bNjP0RHe8UxdklCigZlk6FVCNbOiqVjWnpZJ1zKixpvb7YHSaZiN/w+mzpvXIoqyxyePzKC+L+G1oj7SB20PJw==}
+  /@vitest/coverage-v8@0.34.4(vitest@0.34.4):
+    resolution: {integrity: sha512-TZ5ghzhmg3COQqfBShL+zRQEInHmV9TSwghTdfkHpCTyTOr+rxo6x41vCNcVfWysWULtqtBVpY6YFNovxnESfA==}
     peerDependencies:
       vitest: '>=0.32.0 <1'
     dependencies:
