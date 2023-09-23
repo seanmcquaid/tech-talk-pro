@@ -9,8 +9,8 @@ dependencies:
     specifier: ^5.2.6
     version: 5.2.6(react-dom@18.2.0)(react@18.2.0)
   '@clerk/nextjs':
-    specifier: ^4.23.5
-    version: 4.23.5(next@13.4.19)(react-dom@18.2.0)(react@18.2.0)
+    specifier: ^4.24.1
+    version: 4.24.1(next@13.4.19)(react-dom@18.2.0)(react@18.2.0)
   '@happykit/flags':
     specifier: ^3.3.0
     version: 3.3.0(next@13.4.19)(react@18.2.0)
@@ -25,7 +25,7 @@ dependencies:
     version: 1.9.5(react-redux@8.1.2)(react@18.2.0)
   '@sentry/nextjs':
     specifier: latest
-    version: 7.69.0(next@13.4.19)(react@18.2.0)
+    version: 7.70.0(next@13.4.19)(react@18.2.0)
   '@vercel/analytics':
     specifier: ^1.0.2
     version: 1.0.2
@@ -1606,11 +1606,11 @@ packages:
     resolution: {integrity: sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==}
     dev: true
 
-  /@clerk/backend@0.29.0:
-    resolution: {integrity: sha512-2miuqyzmlzboTcLQOtafGw4+InnkFALMWjM9l9gu75KBWg1pUdFYLEDcJV+MHt0ZtY+pZO7aGnPE0Mf7QnG+bA==}
+  /@clerk/backend@0.29.2:
+    resolution: {integrity: sha512-7BJiQf7tRKuAq61o1LHMEeBkM8HW8HbjxE2bdSF/V2HdW6XlB+FNXFBFWscf5TCB8p5yJWpzTPmGuWT8GSMD+Q==}
     engines: {node: '>=14'}
     dependencies:
-      '@clerk/types': 3.51.0
+      '@clerk/types': 3.52.0
       '@peculiar/webcrypto': 1.4.1
       '@types/node': 16.18.6
       cookie: 0.5.0
@@ -1620,24 +1620,24 @@ packages:
       tslib: 2.4.1
     dev: false
 
-  /@clerk/clerk-react@4.24.2(react@18.2.0):
-    resolution: {integrity: sha512-nMxhtByDMJ4kXoUu2j75tS9NyEI5S0KI3Zj67WhGxVMAUGbOYPI6gmTv6exORb5kVALF0QmS4FGyOGQ2WZJd3A==}
+  /@clerk/clerk-react@4.25.1(react@18.2.0):
+    resolution: {integrity: sha512-+RtK6RNWVlT6jFeOlomi6PM2pDOETyi13zSKL/IgrJ68LV8qrtQikrP0n5v0i0YRDvpjB5lpBF0VgmpAJEGNxQ==}
     engines: {node: '>=14'}
     peerDependencies:
       react: '>=16'
     dependencies:
-      '@clerk/shared': 0.22.0(react@18.2.0)
-      '@clerk/types': 3.51.0
+      '@clerk/shared': 0.23.0(react@18.2.0)
+      '@clerk/types': 3.52.0
       react: 18.2.0
       tslib: 2.4.1
     dev: false
 
-  /@clerk/clerk-sdk-node@4.12.5:
-    resolution: {integrity: sha512-GW0eXhG2P7GCFKnc2j7zOAR2qK0fOQwoZAFvfovXJNyZhlcbg7NKtjsbW6Q8X7qrtaD2UX6SuOvuxQZP633H7w==}
+  /@clerk/clerk-sdk-node@4.12.7:
+    resolution: {integrity: sha512-E8VbfLQ6F6VBRrLbB2o4n2/pKma0qQDw1I7rF4wr5/XazwpmLX29/rUJ9XoF0MspKcPeA7dVzQlvcskpsBjuGw==}
     engines: {node: '>=14'}
     dependencies:
-      '@clerk/backend': 0.29.0
-      '@clerk/types': 3.51.0
+      '@clerk/backend': 0.29.2
+      '@clerk/types': 3.52.0
       '@types/cookies': 0.7.7
       '@types/express': 4.17.14
       '@types/node-fetch': 2.6.2
@@ -1646,18 +1646,18 @@ packages:
       tslib: 2.4.1
     dev: false
 
-  /@clerk/nextjs@4.23.5(next@13.4.19)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-SG8ooFEC5P6lLa1G+239zUu4ciLwmoPei8CnhPzKQ9u90J9ly/j9wVVBm1AX3rY4G+1xMVyR42PUC7wjfvxhoA==}
+  /@clerk/nextjs@4.24.1(next@13.4.19)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-qCP0LVZk4wPoaL5GSAWjsuuukEKtC+elaqCGjzfoCXMUj2MX4P6PIVj7qaN1Er9kmQtpcSaIly4lUw9CK8UrBQ==}
     engines: {node: '>=14'}
     peerDependencies:
       next: '>=10'
       react: ^17.0.2 || ^18.0.0-0
       react-dom: ^17.0.2 || ^18.0.0-0
     dependencies:
-      '@clerk/backend': 0.29.0
-      '@clerk/clerk-react': 4.24.2(react@18.2.0)
-      '@clerk/clerk-sdk-node': 4.12.5
-      '@clerk/types': 3.51.0
+      '@clerk/backend': 0.29.2
+      '@clerk/clerk-react': 4.25.1(react@18.2.0)
+      '@clerk/clerk-sdk-node': 4.12.7
+      '@clerk/types': 3.52.0
       next: 13.4.19(@babel/core@7.22.9)(react-dom@18.2.0)(react@18.2.0)
       path-to-regexp: 6.2.1
       react: 18.2.0
@@ -1665,8 +1665,8 @@ packages:
       tslib: 2.4.1
     dev: false
 
-  /@clerk/shared@0.22.0(react@18.2.0):
-    resolution: {integrity: sha512-AHPypu9gZ3v44PRqiMA56c+YNLc2IzLaPUyiYFYU+xeH/R+wqzGp7OxZoZr/kmzgA8taiVl/bjixWgpuZwzI3A==}
+  /@clerk/shared@0.23.0(react@18.2.0):
+    resolution: {integrity: sha512-/1QPDnXexJCdND00hjgq7ATz35SY+oUVVWGEXjh/Gl+dQyXTeRZRsA5k6TCj+42A39j14xSgq6MQJHgbb7M6Jg==}
     peerDependencies:
       react: '>=16'
     dependencies:
@@ -1676,8 +1676,8 @@ packages:
       swr: 2.2.0(react@18.2.0)
     dev: false
 
-  /@clerk/types@3.51.0:
-    resolution: {integrity: sha512-JCSG2W1nI+zEIyDTGKfQJkvl2Ve5vpR3AxDsyXQMf/aZyXhBT351W1dPUfUW4K9MpLmZ2sB/1gj3UJFaBw9e7g==}
+  /@clerk/types@3.52.0:
+    resolution: {integrity: sha512-AzPFyTcVdmMAEmP0Of2DzQ7M/XyBIYL5cNNKYaEZ+0f0T2xxFC4HIDIQqY1GjwDs6MBiHl2nPf2C06pQpOVWbQ==}
     engines: {node: '>=14'}
     dependencies:
       csstype: 3.1.1
@@ -2357,25 +2357,25 @@ packages:
     resolution: {integrity: sha512-cEjvTPU32OM9lUFegJagO0mRnIn+rbqrG89vV8/xLnLFX0DoR0r1oy5IlTga71Q7uT3Qus7qm7wgeiMT/+Irlg==}
     dev: true
 
-  /@sentry-internal/tracing@7.69.0:
-    resolution: {integrity: sha512-4BgeWZUj9MO6IgfO93C9ocP3+AdngqujF/+zB2rFdUe+y9S6koDyUC7jr9Knds/0Ta72N/0D6PwhgSCpHK8s0Q==}
+  /@sentry-internal/tracing@7.70.0:
+    resolution: {integrity: sha512-SpbE6wZhs6QwG2ORWCt8r28o1T949qkWx/KeRTCdK4Ub95PQ3Y3DgnqD8Wz//3q50Wt6EZDEibmz4t067g6PPg==}
     engines: {node: '>=8'}
     dependencies:
-      '@sentry/core': 7.69.0
-      '@sentry/types': 7.69.0
-      '@sentry/utils': 7.69.0
+      '@sentry/core': 7.70.0
+      '@sentry/types': 7.70.0
+      '@sentry/utils': 7.70.0
       tslib: 2.5.3
     dev: false
 
-  /@sentry/browser@7.69.0:
-    resolution: {integrity: sha512-5ls+zu2PrMhHCIIhclKQsWX5u6WH0Ez5/GgrCMZTtZ1d70ukGSRUvpZG9qGf5Cw1ezS1LY+1HCc3whf8x8lyPw==}
+  /@sentry/browser@7.70.0:
+    resolution: {integrity: sha512-PB+IP49/TLcnDHCj9eJ5tcHE0pzXg23wBakmF3KGMSd5nxEbUvmOsaFPZcgUUlL9JlU3v1Y40We7HdPStrY6oA==}
     engines: {node: '>=8'}
     dependencies:
-      '@sentry-internal/tracing': 7.69.0
-      '@sentry/core': 7.69.0
-      '@sentry/replay': 7.69.0
-      '@sentry/types': 7.69.0
-      '@sentry/utils': 7.69.0
+      '@sentry-internal/tracing': 7.70.0
+      '@sentry/core': 7.70.0
+      '@sentry/replay': 7.70.0
+      '@sentry/types': 7.70.0
+      '@sentry/utils': 7.70.0
       tslib: 2.5.3
     dev: false
 
@@ -2396,27 +2396,27 @@ packages:
       - supports-color
     dev: false
 
-  /@sentry/core@7.69.0:
-    resolution: {integrity: sha512-V6jvK2lS8bhqZDMFUtvwe2XvNstFQf5A+2LMKCNBOV/NN6eSAAd6THwEpginabjet9dHsNRmMk7WNKvrUfQhZw==}
+  /@sentry/core@7.70.0:
+    resolution: {integrity: sha512-voUsGVM+jwRp99AQYFnRvr7sVd2tUhIMj1L6F42LtD3vp7t5ZnKp3NpXagtFW2vWzXESfyJUBhM0qI/bFvn7ZA==}
     engines: {node: '>=8'}
     dependencies:
-      '@sentry/types': 7.69.0
-      '@sentry/utils': 7.69.0
+      '@sentry/types': 7.70.0
+      '@sentry/utils': 7.70.0
       tslib: 2.5.3
     dev: false
 
-  /@sentry/integrations@7.69.0:
-    resolution: {integrity: sha512-FEFtFqXuCo9+L7bENZxFpEAlIODwHl6FyW/DwLfniy9jOXHU7BhP/oICLrFE5J7rh1gNY7N/8VlaiQr3hCnS/g==}
+  /@sentry/integrations@7.70.0:
+    resolution: {integrity: sha512-ffIEuiElROzl4IpYX0O7vtPaadXVycPtyjq86YTHjd2TUFcYuQTPBm5UjEVE0/sSNNCdfWYxNThU/fVyq93l1g==}
     engines: {node: '>=8'}
     dependencies:
-      '@sentry/types': 7.69.0
-      '@sentry/utils': 7.69.0
+      '@sentry/types': 7.70.0
+      '@sentry/utils': 7.70.0
       localforage: 1.10.0
       tslib: 2.5.3
     dev: false
 
-  /@sentry/nextjs@7.69.0(next@13.4.19)(react@18.2.0):
-    resolution: {integrity: sha512-PLgVL07pJafRZZ1parTK6g1GKfdZU/afN/6hs5HrdLeovcpSunEwj3guoHHrewFEbDjj021+0JaG16qnNeAPgQ==}
+  /@sentry/nextjs@7.70.0(next@13.4.19)(react@18.2.0):
+    resolution: {integrity: sha512-Mpto8+LY4ZohRUOy1KJIM6r0oAJ+vo/lVAYXtO3L1rgSIcKD422XqBvJAQIQhQjru1/FpWVdOd2BKl+gD1emFw==}
     engines: {node: '>=8'}
     peerDependencies:
       next: ^10.0.8 || ^11.0 || ^12.0 || ^13.0
@@ -2427,12 +2427,13 @@ packages:
         optional: true
     dependencies:
       '@rollup/plugin-commonjs': 24.0.0(rollup@2.78.0)
-      '@sentry/core': 7.69.0
-      '@sentry/integrations': 7.69.0
-      '@sentry/node': 7.69.0
-      '@sentry/react': 7.69.0(react@18.2.0)
-      '@sentry/types': 7.69.0
-      '@sentry/utils': 7.69.0
+      '@sentry/core': 7.70.0
+      '@sentry/integrations': 7.70.0
+      '@sentry/node': 7.70.0
+      '@sentry/react': 7.70.0(react@18.2.0)
+      '@sentry/types': 7.70.0
+      '@sentry/utils': 7.70.0
+      '@sentry/vercel-edge': 7.70.0
       '@sentry/webpack-plugin': 1.20.0
       chalk: 3.0.0
       next: 13.4.19(@babel/core@7.22.9)(react-dom@18.2.0)(react@18.2.0)
@@ -2445,15 +2446,15 @@ packages:
       - supports-color
     dev: false
 
-  /@sentry/node@7.69.0:
-    resolution: {integrity: sha512-T0NgPcmDQvEuz5hy6aEhXghTHHTWsiP3IWoeEAakDBHAXmtpT6lYFQZgb5AiEOt9F5KO/G/1yH3YYdpDAnKhPw==}
+  /@sentry/node@7.70.0:
+    resolution: {integrity: sha512-GeGlnu3QnJX0GN2FvZ3E31e48ZhRzEpREyC0Wa4BRvYHnyiGvsQjo/0RKeq6vvlggRhVnuoMg/jESyUmdntrAA==}
     engines: {node: '>=8'}
     dependencies:
-      '@sentry-internal/tracing': 7.69.0
-      '@sentry/core': 7.69.0
-      '@sentry/types': 7.69.0
-      '@sentry/utils': 7.69.0
-      cookie: 0.4.2
+      '@sentry-internal/tracing': 7.70.0
+      '@sentry/core': 7.70.0
+      '@sentry/types': 7.70.0
+      '@sentry/utils': 7.70.0
+      cookie: 0.5.0
       https-proxy-agent: 5.0.1
       lru_map: 0.3.3
       tslib: 2.5.3
@@ -2461,39 +2462,49 @@ packages:
       - supports-color
     dev: false
 
-  /@sentry/react@7.69.0(react@18.2.0):
-    resolution: {integrity: sha512-J+DciRRVuruf1nMmBOi2VeJkOLGeCb4vTOFmHzWTvRJNByZ0flyo8E/fyROL7+23kBq1YbcVY6IloUlH73hneQ==}
+  /@sentry/react@7.70.0(react@18.2.0):
+    resolution: {integrity: sha512-oFd1NEG6S3nczZY8ZFQdEY9ZOfgOvJT1KRoXaSaBIC1KjL0+ngX9TKg+eiYxvI0euxnY5jCwozbA0NsDXqwN7A==}
     engines: {node: '>=8'}
     peerDependencies:
       react: 15.x || 16.x || 17.x || 18.x
     dependencies:
-      '@sentry/browser': 7.69.0
-      '@sentry/types': 7.69.0
-      '@sentry/utils': 7.69.0
+      '@sentry/browser': 7.70.0
+      '@sentry/types': 7.70.0
+      '@sentry/utils': 7.70.0
       hoist-non-react-statics: 3.3.2
       react: 18.2.0
       tslib: 2.5.3
     dev: false
 
-  /@sentry/replay@7.69.0:
-    resolution: {integrity: sha512-oUqWyBPFUgShdVvgJtV65EQH9pVDmoYVQMOu59JI6FHVeL3ald7R5Mvz6GaNLXsirvvhp0yAkcAd2hc5Xi6hDw==}
+  /@sentry/replay@7.70.0:
+    resolution: {integrity: sha512-XjnyE6ORREz9kBWWHdXaIjS9P2Wo7uEw+y23vfLQwzV0Nx3xJ+FG4dwf8onyIoeCZDKbz7cqQIbugU1gkgUtZw==}
     engines: {node: '>=12'}
     dependencies:
-      '@sentry/core': 7.69.0
-      '@sentry/types': 7.69.0
-      '@sentry/utils': 7.69.0
+      '@sentry/core': 7.70.0
+      '@sentry/types': 7.70.0
+      '@sentry/utils': 7.70.0
     dev: false
 
-  /@sentry/types@7.69.0:
-    resolution: {integrity: sha512-zPyCox0mzitzU6SIa1KIbNoJAInYDdUpdiA+PoUmMn2hFMH1llGU/cS7f4w/mAsssTlbtlBi72RMnWUCy578bw==}
+  /@sentry/types@7.70.0:
+    resolution: {integrity: sha512-rY4DqpiDBtXSk4MDNBH3dwWqfPbNBI/9GA7Y5WJSIcObBtfBKp0fzYliHJZD0pgM7d4DPFrDn42K9Iiumgymkw==}
     engines: {node: '>=8'}
     dev: false
 
-  /@sentry/utils@7.69.0:
-    resolution: {integrity: sha512-4eBixe5Y+0EGVU95R4NxH3jkkjtkE4/CmSZD4In8SCkWGSauogePtq6hyiLsZuP1QHdpPb9Kt0+zYiBb2LouBA==}
+  /@sentry/utils@7.70.0:
+    resolution: {integrity: sha512-0cChMH0lsGp+5I3D4wOHWwjFN19HVrGUs7iWTLTO5St3EaVbdeLbI1vFXHxMxvopbwgpeZafbreHw/loIdZKpw==}
     engines: {node: '>=8'}
     dependencies:
-      '@sentry/types': 7.69.0
+      '@sentry/types': 7.70.0
+      tslib: 2.5.3
+    dev: false
+
+  /@sentry/vercel-edge@7.70.0:
+    resolution: {integrity: sha512-YveyP23ALodINciALKPyw6zDflujGCywzOKh249WzVkO4/3MkFstk82luuPWIbn3Aba4L7MqUB8xHZQANw/dMw==}
+    engines: {node: '>=8'}
+    dependencies:
+      '@sentry/core': 7.70.0
+      '@sentry/types': 7.70.0
+      '@sentry/utils': 7.70.0
       tslib: 2.5.3
     dev: false
 
@@ -3743,11 +3754,6 @@ packages:
 
   /convert-source-map@1.9.0:
     resolution: {integrity: sha512-ASFBup0Mz1uyiIjANan1jzLQami9z1PoYSZCiiYW2FczPbenXc45FZdBZLzOT+r6+iciuEModtmCti+hjaAk0A==}
-
-  /cookie@0.4.2:
-    resolution: {integrity: sha512-aSWTXFzaKWkvHO1Ny/s+ePFpvKsPnjc551iI41v3ny/ow6tBG5Vd+FuqGNhh1LxOmVzOlGUriIlOaokOvhaStA==}
-    engines: {node: '>= 0.6'}
-    dev: false
 
   /cookie@0.5.0:
     resolution: {integrity: sha512-YZ3GUyn/o8gfKJlnlX7g7xq4gyO6OSuhGPKaaGssGB2qgDUS0gPgtTvoyZLTt9Ab6dC4hfc9dV5arkvc/OCmrw==}
