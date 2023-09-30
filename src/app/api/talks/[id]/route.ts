@@ -56,6 +56,7 @@ export async function DELETE(
       status: 204,
     });
   } catch (err) {
+    console.log(err);
     return NextResponse.next({
       status: 500,
       statusText: "The talk couldn't be deleted",
@@ -91,7 +92,8 @@ export async function PUT(
       });
     }
 
-    const { talkLength, topic, abstract } = createTalkBodySchema.parse(body);
+    const { talkLength, topic, abstract, category } =
+      createTalkBodySchema.parse(body);
     const updatedTalk = await db.talk.update({
       where: {
         id,
@@ -100,6 +102,7 @@ export async function PUT(
         talkLength,
         topic,
         abstract,
+        category,
       },
     });
     return NextResponse.json(updatedTalk);
