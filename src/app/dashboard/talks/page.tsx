@@ -5,6 +5,7 @@ import PageWrapper from '@/components/ui/PageWrapper';
 import useAppTranslation from '@/hooks/useAppTranslation';
 import { useGetTalksQuery } from '@/store/talksApi';
 import { Typography } from 'antd';
+import styled from 'styled-components';
 
 const TalksPage = () => {
   const { t } = useAppTranslation();
@@ -19,15 +20,24 @@ const TalksPage = () => {
         text={t('TalksPage.createNewTalkInfo')}
       />
       {isLoading && <LoadingSpinner />}
-      {data?.map(talk => (
-        <NavigationCard
-          title={talk.topic}
-          route={`/dashboard/talks/${talk.id}`}
-          key={talk.id}
-        />
-      ))}
+      <FlexWrap>
+        {data?.map(talk => (
+          <NavigationCard
+            title={talk.topic}
+            route={`/dashboard/talks/${talk.id}`}
+            key={talk.id}
+            text={talk.category}
+          />
+        ))}
+      </FlexWrap>
     </PageWrapper>
   );
 };
+
+const FlexWrap = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 16px;
+`;
 
 export default TalksPage;
