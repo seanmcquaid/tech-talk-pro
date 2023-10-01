@@ -1,6 +1,6 @@
 import { createSlideBodySchema } from '@/types/requests/CreateSlideBody';
 import db from '@/utils/db';
-import type { NextRequest} from 'next/server';
+import type { NextRequest } from 'next/server';
 import { NextResponse } from 'next/server';
 
 export async function DELETE(
@@ -16,11 +16,11 @@ export async function DELETE(
       },
     });
 
-    return NextResponse.next({
+    return NextResponse.json(null, {
       status: 204,
     });
   } catch (err) {
-    return NextResponse.next({
+    return NextResponse.json(null, {
       status: 500,
       statusText: "The slide couldn't be deleted",
     });
@@ -51,7 +51,7 @@ export async function PUT(
 
     return NextResponse.json(slide);
   } catch (err) {
-    return NextResponse.next({
+    return NextResponse.json(null, {
       status: 500,
       statusText: "The slide couldn't be updated",
     });

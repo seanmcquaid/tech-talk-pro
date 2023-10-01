@@ -73,7 +73,7 @@ const EditTalkPage = () => {
   return (
     <PageWrapper isLoading={isLoading}>
       <Button onClick={handleDeleteOnClick} disabled={deleteTalkLoading}>
-        Delete
+        {t('EditTalkPage.delete')}
       </Button>
       <form onSubmit={onSubmit}>
         <Controller
@@ -113,7 +113,7 @@ const EditTalkPage = () => {
           render={({ field }) => <Input.TextArea {...field} />}
         />
         <Button htmlType="submit" disabled={editTalkLoading}>
-          Submit
+          {t('EditTalkPage.save')}
         </Button>
       </form>
     </PageWrapper>

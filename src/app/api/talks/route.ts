@@ -14,7 +14,7 @@ export async function GET() {
     });
     return NextResponse.json(talks);
   } catch (err) {
-    return NextResponse.next({
+    return NextResponse.json(null, {
       status: 500,
       statusText: "The talks couldn't be retrieved",
     });
@@ -38,7 +38,7 @@ export async function POST(request: NextRequest) {
     });
     return NextResponse.json(talk);
   } catch (err) {
-    return NextResponse.next({
+    return NextResponse.json(null, {
       status: 500,
       statusText: "The talk couldn't be created",
     });

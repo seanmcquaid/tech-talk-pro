@@ -19,14 +19,14 @@ export async function GET(
     });
 
     if (!talk) {
-      return NextResponse.next({
+      return NextResponse.json(null, {
         status: 404,
         statusText: 'Talk not found',
       });
     }
 
     if (talk.userId !== userId) {
-      return NextResponse.next({
+      return NextResponse.json(null, {
         status: 403,
         statusText: 'You are not authorized to view this talk',
       });
@@ -34,7 +34,7 @@ export async function GET(
 
     return NextResponse.json(talk);
   } catch (err) {
-    return NextResponse.next({
+    return NextResponse.json(null, {
       status: 500,
       statusText: "The talk couldn't be retrieved",
     });
@@ -52,12 +52,12 @@ export async function DELETE(
         id,
       },
     });
-    return NextResponse.next({
+    return NextResponse.json(null, {
       status: 204,
     });
   } catch (err) {
     console.log(err);
-    return NextResponse.next({
+    return NextResponse.json(null, {
       status: 500,
       statusText: "The talk couldn't be deleted",
     });
@@ -79,14 +79,14 @@ export async function PUT(
     });
 
     if (!originalTalk) {
-      return NextResponse.next({
+      return NextResponse.json(null, {
         status: 404,
         statusText: 'Talk not found',
       });
     }
 
     if (originalTalk.userId !== userId) {
-      return NextResponse.next({
+      return NextResponse.json(null, {
         status: 403,
         statusText: 'You are not authorized to view this talk',
       });
@@ -107,7 +107,7 @@ export async function PUT(
     });
     return NextResponse.json(updatedTalk);
   } catch (err) {
-    return NextResponse.next({
+    return NextResponse.json(null, {
       status: 500,
       statusText: "The talk couldn't be updated",
     });
