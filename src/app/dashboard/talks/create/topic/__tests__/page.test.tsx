@@ -3,7 +3,7 @@ import { useChat } from 'ai/react';
 import SelectTopicPage from '../page';
 import type { MockedFunction } from 'vitest';
 import { screen, waitFor } from '@testing-library/react';
-import { render } from '@/testUtils/reactTestingLibraryUtils';
+import { render } from '@/utils/testing/reactTestingLibraryUtils';
 
 vi.mock('ai/react');
 

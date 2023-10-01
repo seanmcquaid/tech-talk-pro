@@ -17,7 +17,22 @@ export default defineConfig({
       'src/**/*.test.jsx',
     ],
     coverage: {
+      provider: 'istanbul',
       reporter: ['lcov'],
+      all: true,
+      include: ['src/**/*.ts', 'src/**/*.tsx'],
+      exclude: [
+        'src/setupTests.ts',
+        'src/utils/testing',
+        'src/i18n',
+        'src/env.client.ts',
+        'src/env.server.ts',
+        'src/types',
+        'src/router.ts',
+        'src/icons',
+        'src/styles',
+        'src/middleware.ts',
+      ],
     },
   },
   resolve: {
