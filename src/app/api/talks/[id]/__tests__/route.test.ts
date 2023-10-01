@@ -30,6 +30,8 @@ describe('/talks/[id]', () => {
         talkLength: 30,
         topic: 'Test topic',
         abstract: 'Test abstract',
+        category: 'Test category',
+        createdAt: new Date(),
       } as Talk);
       const result = await GET({} as NextRequest, {
         params: {
@@ -47,6 +49,8 @@ describe('/talks/[id]', () => {
         talkLength: 30,
         topic: 'Test topic',
         abstract: 'Test abstract',
+        category: 'Test category',
+        createdAt: new Date(),
       } as Talk);
       const result = await GET({} as NextRequest, {
         params: {
@@ -68,9 +72,9 @@ describe('/talks/[id]', () => {
     beforeEach(() => {
       mockAuth.mockReturnValueOnce({ userId: '123' } as SignedInAuthObject);
     });
-    it('Returns a 204 on successful deletion', async () => {
+    it('Returns a 200 on successful deletion', async () => {
       const result = await DELETE({} as NextRequest, { params: { id: '1' } });
-      expect(result.status).toBe(204);
+      expect(result.status).toBe(200);
     });
     it('Returns a 500 when the deletion fails', async () => {
       mockDb.talk.delete.mockRejectedValueOnce(null);
@@ -97,6 +101,8 @@ describe('/talks/[id]', () => {
         talkLength: 30,
         topic: 'Test topic',
         abstract: 'Test abstract',
+        category: 'Test category',
+        createdAt: new Date(),
       } as Talk);
       const result = await PUT({ json: () => ({}) } as NextRequest, {
         params: {
@@ -114,6 +120,8 @@ describe('/talks/[id]', () => {
         talkLength: 30,
         topic: 'Test topic',
         abstract: 'Test abstract',
+        category: 'Test category',
+        createdAt: new Date(),
       } as Talk);
       mockDb.talk.update.mockResolvedValueOnce({
         id: '123',
@@ -122,6 +130,8 @@ describe('/talks/[id]', () => {
         talkLength: 30,
         topic: 'Test topic',
         abstract: 'Test abstract',
+        category: 'Test category',
+        createdAt: new Date(),
       } as Talk);
       const result = await PUT(
         {

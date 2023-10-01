@@ -53,7 +53,7 @@ export async function DELETE(
       },
     });
     return NextResponse.json(null, {
-      status: 204,
+      status: 200,
     });
   } catch (err) {
     console.log(err);
