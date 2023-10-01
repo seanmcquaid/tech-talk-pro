@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "build": "next build",
-    "coverage": "vitest run --coverage --passWithNoTests",
+    "coverage": "vitest run --coverage",
     "dev": "next dev",
     "format": "prettier --write .",
     "postinstall": "husky install && pnpm prisma:generate",
@@ -15,8 +15,8 @@
     "prisma:generate": "prisma generate",
     "prisma:migrate": "prisma migrate dev --name deploy",
     "start": "next start",
-    "test": "vitest run --passWithNoTests",
-    "test:watch": "vitest --passWithNoTests"
+    "test": "vitest run",
+    "test:watch": "vitest"
   },
   "dependencies": {
     "@ant-design/icons": "^5.2.6",
