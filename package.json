@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "build": "next build",
-    "coverage": "vitest run --coverage --passWithNoTests",
+    "coverage": "vitest run --coverage",
     "dev": "next dev",
     "format": "prettier --write .",
     "postinstall": "husky install && pnpm prisma:generate",
@@ -15,8 +15,8 @@
     "prisma:generate": "prisma generate",
     "prisma:migrate": "prisma migrate dev --name deploy",
     "start": "next start",
-    "test": "vitest run --passWithNoTests",
-    "test:watch": "vitest --passWithNoTests"
+    "test": "vitest run",
+    "test:watch": "vitest"
   },
   "dependencies": {
     "@ant-design/icons": "^5.2.6",
@@ -57,6 +57,7 @@
     "@typescript-eslint/eslint-plugin": "^5.62.0",
     "@typescript-eslint/parser": "^5.62.0",
     "@vitejs/plugin-react": "^4.1.0",
+    "@vitest/coverage-istanbul": "^0.34.6",
     "@vitest/coverage-v8": "^0.34.6",
     "eslint": "8.50.0",
     "eslint-config-next": "13.5.3",

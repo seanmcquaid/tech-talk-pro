@@ -19,9 +19,31 @@ const talksApi = createApi({
       query: json => ({ url: 'talks', method: 'POST', json }),
       invalidatesTags: ['Talk'],
     }),
+    getTalk: builder.query<Talk, string>({
+      query: id => ({ url: `talks/${id}` }),
+      providesTags: result => [{ type: 'Talk', id: result?.id }],
+    }),
+    deleteTalk: builder.mutation<void, string>({
+      query: id => ({ url: `talks/${id}`, method: 'DELETE' }),
+      invalidatesTags: ['Talk'],
+    }),
+    editTalk: builder.mutation<Talk, { talk: CreateTalkBody; id: string }>({
+      query: ({ talk, id }) => ({
+        url: `talks/${id}`,
+        method: 'PUT',
+        json: talk,
+      }),
+      invalidatesTags: ['Talk'],
+    }),
   }),
 });
 
-export const { useGetTalksQuery, useCreateTalkMutation } = talksApi;
+export const {
+  useGetTalksQuery,
+  useCreateTalkMutation,
+  useDeleteTalkMutation,
+  useEditTalkMutation,
+  useGetTalkQuery,
+} = talksApi;
 
 export default talksApi;

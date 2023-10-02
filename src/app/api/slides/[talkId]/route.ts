@@ -1,7 +1,7 @@
 import { createSlideBodySchema } from '@/types/requests/CreateSlideBody';
 import db from '@/utils/db';
 import { auth } from '@clerk/nextjs';
-import type { NextRequest} from 'next/server';
+import type { NextRequest } from 'next/server';
 import { NextResponse } from 'next/server';
 
 export async function GET(
@@ -21,7 +21,7 @@ export async function GET(
 
     return NextResponse.json(slides);
   } catch (err) {
-    return NextResponse.next({
+    return NextResponse.json(null, {
       status: 500,
       statusText: "The slides couldn't be retrieved",
     });
@@ -50,7 +50,7 @@ export async function POST(
     });
     return NextResponse.json(slide);
   } catch (err) {
-    return NextResponse.next({
+    return NextResponse.json(null, {
       status: 500,
       statusText: "The slide couldn't be created",
     });

@@ -34,6 +34,10 @@ const enUSLocale = {
     talksCardTitle: 'Talks',
     title: 'Dashboard',
   },
+  EditTalkPage: {
+    delete: 'Delete',
+    save: 'Save',
+  },
   HomePage: {
     signIn: 'Sign In',
     subtitle:
@@ -51,6 +55,9 @@ const enUSLocale = {
       'Based on your selections from earlier, we are going to generate some topic options for you. Click the button below to see!',
     title: 'Time to figure out your topic!',
     tryAgain: 'Unhappy with the results? Try again!',
+  },
+  TalkDetailsPage: {
+    edit: 'Edit',
   },
   TalksPage: {
     createNewTalk: 'Create New Talk',

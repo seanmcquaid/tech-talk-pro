@@ -10,6 +10,7 @@ import TalkLengths from '@/constants/TalkLengths';
 import useAppTranslation from '@/hooks/useAppTranslation';
 import TalkCategories from '@/constants/TalkCategories';
 import { useAppDispatch, useAppSelector } from '@/store';
+import { zodResolver } from '@hookform/resolvers/zod';
 
 const formSchema = z.object({
   talkCategory: TalkCategories,
@@ -25,6 +26,7 @@ const ConfigurePage = () => {
       talkCategory,
       talkLength,
     },
+    resolver: zodResolver(formSchema),
   });
   const dispatch = useAppDispatch();
   const router = useRouter();

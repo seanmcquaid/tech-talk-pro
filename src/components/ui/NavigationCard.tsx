@@ -20,6 +20,8 @@ const NavigationCard = ({ title, route, text }: NavigationCardProps) => {
 
 const StyledCard = styled(Card)`
   cursor: pointer;
+  max-width: 350px;
+  margin: 16px;
 `;
 
 export default NavigationCard;
