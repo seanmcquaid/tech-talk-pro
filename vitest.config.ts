@@ -41,6 +41,7 @@ export default defineConfig({
         'src/app/not-found.tsx',
         'src/app/layout.tsx',
         'src/constants',
+        'src/app/api/prompt/route.ts',
       ],
     },
   },
