@@ -27,7 +27,7 @@
     "@reduxjs/toolkit": "^1.9.6",
     "@sentry/nextjs": "latest",
     "@vercel/analytics": "^1.0.2",
-    "ai": "^2.2.13",
+    "ai": "^2.2.14",
     "antd": "^5.9.4",
     "i18next": "^23.5.1",
     "i18next-browser-languagedetector": "^7.1.0",
