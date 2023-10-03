@@ -8,16 +8,15 @@ const talksApi = createApi({
   baseQuery: kyBaseQuery({
     baseUrl: '/api',
   }),
-  tagTypes: ['Talk'],
+  tagTypes: ['Talk', 'Talks'],
   endpoints: builder => ({
     getTalks: builder.query<Talk[], void>({
       query: () => ({ url: 'talks' }),
-      providesTags: result =>
-        result ? result.map(({ id }) => ({ type: 'Talk', id })) : [],
+      providesTags: ['Talks'],
     }),
     createTalk: builder.mutation<Talk, CreateTalkBody>({
       query: json => ({ url: 'talks', method: 'POST', json }),
-      invalidatesTags: ['Talk'],
+      invalidatesTags: result => ['Talks', { type: 'Talk', id: result?.id }],
     }),
     getTalk: builder.query<Talk, string>({
       query: id => ({ url: `talks/${id}` }),
@@ -25,7 +24,7 @@ const talksApi = createApi({
     }),
     deleteTalk: builder.mutation<void, string>({
       query: id => ({ url: `talks/${id}`, method: 'DELETE' }),
-      invalidatesTags: ['Talk'],
+      invalidatesTags: ['Talks'],
     }),
     editTalk: builder.mutation<Talk, { talk: CreateTalkBody; id: string }>({
       query: ({ talk, id }) => ({
@@ -33,7 +32,13 @@ const talksApi = createApi({
         method: 'PUT',
         json: talk,
       }),
-      invalidatesTags: ['Talk'],
+      invalidatesTags: result => [
+        'Talks',
+        {
+          type: 'Talk',
+          id: result?.id,
+        },
+      ],
     }),
   }),
 });
