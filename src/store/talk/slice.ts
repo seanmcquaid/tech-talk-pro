@@ -43,6 +43,7 @@ export const talkSlice = createSlice({
   },
 });
 
-export const { setTalkLength, setTopic, setAbstract } = talkSlice.actions;
+export const { setTalkLength, setTopic, setAbstract, setTalkCategory } =
+  talkSlice.actions;
 
 export default talkSlice;

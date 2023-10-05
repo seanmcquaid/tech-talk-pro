@@ -17,6 +17,7 @@ import TalkLengths from '@/constants/TalkLengths';
 import useAppTranslation from '@/hooks/useAppTranslation';
 import { useEffect } from 'react';
 import toast from 'react-hot-toast';
+import styled from 'styled-components';
 
 const EditTalkPage = () => {
   const { t } = useAppTranslation();
@@ -53,6 +54,7 @@ const EditTalkPage = () => {
       .unwrap()
       .then(() => {
         router.push(`/dashboard/talks/${params.id}`);
+        toast('Your talk was successfully edited');
       })
       .catch(() => {
         toast('Something went wrong editing your talk, try again!');
@@ -64,6 +66,7 @@ const EditTalkPage = () => {
       .unwrap()
       .then(() => {
         router.push('/dashboard/talks');
+        toast('Your talk was successfully deleted');
       })
       .catch(() => {
         toast('Something went wrong deleting your talk, try again!');
@@ -72,52 +75,82 @@ const EditTalkPage = () => {
 
   return (
     <PageWrapper isLoading={isLoading}>
-      <Button onClick={handleDeleteOnClick} disabled={deleteTalkLoading}>
-        {t('EditTalkPage.delete')}
-      </Button>
-      <form onSubmit={onSubmit}>
-        <Controller
-          name="topic"
-          control={control}
-          render={({ field }) => <Input {...field} />}
-        />
-        <Controller
-          name="category"
-          control={control}
-          render={({ field }) => (
-            <Select
-              {...field}
-              options={TalkCategories.options.map(option => ({
-                title: option,
-                value: option,
-              }))}
-            />
-          )}
-        />
-        <Controller
-          name="talkLength"
-          control={control}
-          render={({ field }) => (
-            <Select
-              {...field}
-              options={Object.values(TalkLengths.enum).map(option => ({
-                title: t('ConfigurePage.minutes', { numberOfMinutes: option }),
-                value: option,
-              }))}
-            />
-          )}
-        />
-        <Controller
-          name="abstract"
-          control={control}
-          render={({ field }) => <Input.TextArea {...field} />}
-        />
-        <Button htmlType="submit" disabled={editTalkLoading}>
-          {t('EditTalkPage.save')}
-        </Button>
-      </form>
+      <StyledForm onSubmit={onSubmit}>
+        <RowWrapper>
+          <Controller
+            name="topic"
+            control={control}
+            render={({ field }) => <Input.TextArea {...field} />}
+          />
+        </RowWrapper>
+        <RowWrapper>
+          <Controller
+            name="category"
+            control={control}
+            render={({ field }) => (
+              <Select
+                {...field}
+                options={TalkCategories.options.map(option => ({
+                  title: option,
+                  value: option,
+                }))}
+              />
+            )}
+          />
+          <Controller
+            name="talkLength"
+            control={control}
+            render={({ field }) => (
+              <Select
+                {...field}
+                options={Object.values(TalkLengths.enum).map(option => ({
+                  title: t('ConfigurePage.minutes', {
+                    numberOfMinutes: option,
+                  }),
+                  value: option,
+                }))}
+              />
+            )}
+          />
+        </RowWrapper>
+        <RowWrapper>
+          <Controller
+            name="abstract"
+            control={control}
+            render={({ field }) => <Input.TextArea {...field} />}
+          />
+        </RowWrapper>
+        <RowWrapper>
+          <StyledButton htmlType="submit" disabled={editTalkLoading}>
+            {t('EditTalkPage.save')}
+          </StyledButton>
+          <StyledButton
+            onClick={handleDeleteOnClick}
+            disabled={deleteTalkLoading}
+            htmlType="button"
+          >
+            {t('EditTalkPage.delete')}
+          </StyledButton>
+        </RowWrapper>
+      </StyledForm>
     </PageWrapper>
   );
 };
+
+const StyledForm = styled.form`
+  width: 100%;
+  max-width: 600px;
+`;
+
+const RowWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  margin-top: 16px;
+  width: 100%;
+`;
+
+const StyledButton = styled(Button)`
+  margin-right: 8px;
+`;
 
 export default EditTalkPage;

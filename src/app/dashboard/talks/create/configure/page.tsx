@@ -3,7 +3,7 @@ import PageWrapper from '@/components/ui/PageWrapper';
 import { Button, Select, Typography } from 'antd';
 import { z } from 'zod';
 import { Controller, useForm } from 'react-hook-form';
-import { setTalkLength, setTopic } from '@/store/talk/slice';
+import { setTalkCategory, setTalkLength } from '@/store/talk/slice';
 import { useRouter } from 'next/navigation';
 import { selectTalkCategory, selectTalkLength } from '@/store/talk/selectors';
 import TalkLengths from '@/constants/TalkLengths';
@@ -33,7 +33,7 @@ const ConfigurePage = () => {
 
   const onSubmit = handleSubmit(value => {
     dispatch(setTalkLength(value.talkLength));
-    dispatch(setTopic(value.talkCategory));
+    dispatch(setTalkCategory(value.talkCategory));
     router.push('/dashboard/talks/create/topic');
   });
 
