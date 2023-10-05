@@ -21,7 +21,11 @@ const SelectTopicPage = () => {
   const router = useRouter();
 
   const handleSelectTopic = (topic: string) => {
-    dispatch(setTopic(topic));
+    dispatch(
+      setTopic(
+        topic.replaceAll('"', '').replaceAll(/[0-9]/g, '').replace('.', ''),
+      ),
+    );
     router.push('/dashboard/talks/create/abstract');
   };
 

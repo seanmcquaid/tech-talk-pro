@@ -15,6 +15,7 @@ import { useChat } from 'ai/react';
 import { Button, Typography } from 'antd';
 import { useRouter } from 'next/navigation';
 import { toast } from 'react-hot-toast';
+import styled from 'styled-components';
 
 const CreateAbstractPage = () => {
   const { t } = useAppTranslation();
@@ -53,42 +54,55 @@ const CreateAbstractPage = () => {
   return (
     <PageWrapper>
       <Typography.Title>{t('CreateAbstractPage.title')}</Typography.Title>
-      <Typography.Paragraph>
-        {t('CreateAbstractPage.subtitle')}
-      </Typography.Paragraph>
-      {!!messages.length && !isLoading && (
-        <Button onClick={handleGoToNextPage} loading={createTalkLoading}>
-          {t('CreateAbstractPage.goToNextPage')}
-        </Button>
-      )}
-      {!!messages.length && !isLoading ? (
-        <>
-          <Typography.Paragraph>
-            {t('CreateAbstractPage.tryAgain')}
-          </Typography.Paragraph>
-          <Button onClick={() => reload()} loading={isLoading}>
+      <ButtonWrapper>
+        {!!messages.length && !isLoading && (
+          <StyledButton
+            onClick={handleGoToNextPage}
+            loading={createTalkLoading}
+          >
+            {t('CreateAbstractPage.goToNextPage')}
+          </StyledButton>
+        )}
+        {!!messages.length && !isLoading ? (
+          <StyledButton onClick={() => reload()} loading={isLoading}>
             {t('CreateAbstractPage.reload')}
-          </Button>
-        </>
-      ) : (
-        <form onSubmit={handleSubmit}>
-          <Button htmlType="submit" loading={isLoading}>
-            {t('CreateAbstractPage.load')}
-          </Button>
-        </form>
-      )}
+          </StyledButton>
+        ) : (
+          <form onSubmit={handleSubmit}>
+            <StyledButton htmlType="submit" loading={isLoading}>
+              {t('CreateAbstractPage.load')}
+            </StyledButton>
+          </form>
+        )}
+      </ButtonWrapper>
+
       {isLoading ? (
         <LoadingSpinner />
       ) : (
-        <ul data-testid="abstract">
+        <StyledList data-testid="abstract">
           {filteredMessages.map((m, index) => (
             <li key={index}>{m.content}</li>
           ))}
-        </ul>
+        </StyledList>
       )}
       {error && <Typography.Paragraph>{error.message}</Typography.Paragraph>}
     </PageWrapper>
   );
 };
+
+const StyledList = styled.ul`
+  list-style-type: none;
+  padding: 0;
+`;
+
+const ButtonWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+`;
+
+const StyledButton = styled(Button)`
+  margin-right: 1rem;
+`;
 
 export default CreateAbstractPage;
