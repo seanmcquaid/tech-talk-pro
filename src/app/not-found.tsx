@@ -16,7 +16,7 @@ const NotFoundPage = () => {
     <FullHeightLayout>
       <StyledContent>
         <Typography.Title>{t('NotFoundPage.title')}</Typography.Title>
-        <Button onClick={onClick}>{'NotFoundPage.goHome'}</Button>
+        <Button onClick={onClick}>{t('NotFoundPage.goHome')}</Button>
       </StyledContent>
     </FullHeightLayout>
   );

@@ -42,6 +42,7 @@ export default defineConfig({
         'src/app/layout.tsx',
         'src/constants',
         'src/app/api/prompt/route.ts',
+        'src/utils/db.ts',
       ],
     },
   },
