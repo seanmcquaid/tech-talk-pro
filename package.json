@@ -29,7 +29,7 @@
     "@vercel/analytics": "^1.1.1",
     "ai": "^2.2.15",
     "antd": "^5.10.1",
-    "i18next": "^23.5.1",
+    "i18next": "^23.6.0",
     "i18next-browser-languagedetector": "^7.1.0",
     "ky": "^1.1.0",
     "next": "13.5.5",
