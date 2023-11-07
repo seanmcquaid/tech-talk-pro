@@ -28,7 +28,7 @@
     "@sentry/nextjs": "latest",
     "@vercel/analytics": "^1.1.1",
     "ai": "^2.2.20",
-    "antd": "^5.10.3",
+    "antd": "^5.11.0",
     "i18next": "^23.6.0",
     "i18next-browser-languagedetector": "^7.1.0",
     "ky": "^1.1.3",
